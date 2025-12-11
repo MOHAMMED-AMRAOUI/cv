@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mohammed Amraoui – Curriculum Vitae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Police Google (facultatif, tu peux enlever si besoin) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --card: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --shadow-soft-sm: 0 10px 25px rgba(15, 23, 42, 0.8);
+      --transition-fast: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page-wrap {
+      max-width: 1080px;
+      margin: 32px auto 48px;
+      padding: 0 16px 32px;
+    }
+
+    /* Header principal */
+
+    .hero {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(56, 189, 248, 0.18));
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 24px 24px 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 2.1fr);
+      gap: 20px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -60px;
+      background:
+        radial-gradient(circle at 0 0, rgba(56,189,248,0.25), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(94,234,212,0.28), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(37,99,235,0.3), transparent 55%);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: contents;
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-name {
+      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .hero-name span {
+      background: linear-gradient(120deg, #e5e7eb, #f9fafb);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      max-width: 38rem;
+    }
+
+    .hero-tagline {
+      margin-top: 2px;
+      font-size: 0.9rem;
+      color: #cbd5f5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .hero-tag-pill {
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #cbd5f5;
+      background: rgba(15,23,42,0.55);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(15,23,42,0.75);
+      border: 1px solid rgba(30,64,175,0.7);
+    }
+
+    .hero-meta-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 4px rgba(74,222,128,0.35);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: var(--radius-full);
+      border: 1px solid transparent;
+      font-size: 0.86rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #38bdf8, #0ea5e9);
+      color: #0b1120;
+      box-shadow: var(--shadow-soft-sm);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) translateZ(0);
+      box-shadow: 0 20px 45px rgba(59,130,246,0.55);
+    }
+
+    .btn-outline {
+      background: rgba(15,23,42,0.9);
+      color: var(--text);
+      border-color: rgba(148,163,184,0.6);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.25), rgba(15,23,42,0.95));
+      transform: translateY(-1px) translateZ(0);
+    }
+
+    .btn span.icon {
+      font-size: 1rem;
+      margin-right: 6px;
+    }
+
+    /* Colonne droite header */
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .hero-avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 26px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: radial-gradient(circle at 30% 0, #38bdf8, #0f172a 55%, #020617 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+    }
+
+    .hero-avatar span {
+      color: #e5e7eb;
+      font-weight: 700;
+    }
+
+    .hero-links {
+      background: rgba(15,23,42,0.92);
+      border-radius: 20px;
+      padding: 10px;
+      border: 1px solid rgba(30,64,175,0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .hero-links-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .hero-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 12px;
+      transition: background var(--transition-fast), transform var(--transition-fast);
+      font-size: 0.85rem;
+    }
+
+    .hero-link-item span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .hero-link-item:hover {
+      background: rgba(30,64,175,0.5);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .hero-link-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Navigation de sections */
+
+    .sections-nav {
+      position: sticky;
+      top: 8px;
+      z-index: 10;
+      margin-top: 18px;
+      margin-bottom: 14px;
+      background: linear-gradient(to right, rgba(15,23,42,0.96), rgba(15,23,42,0.88));
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(31,41,55,0.9);
+      padding: 4px 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+      backdrop-filter: blur(14px);
+    }
+
+    .sections-nav a {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+      border: 1px solid transparent;
+    }
+
+    .sections-nav a:hover {
+      background: rgba(30,64,175,0.6);
+      color: #e5e7eb;
+      border-color: rgba(96,165,250,0.9);
+      transform: translateY(-1px);
+    }
+
+    .sections-nav a.primary {
+      background: rgba(37,99,235,0.85);
+      color: #e5e7eb;
+      border-color: rgba(129,140,248,0.9);
+    }
+
+    /* Layout du contenu */
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.5fr);
+      gap: 18px;
+      margin-top: 4px;
+    }
+
+    .col-main,
+    .col-side {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    section.block {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.9);
+      position: relative;
+    }
+
+    section.block::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.14), transparent 60%);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .block-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .block-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .block-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .block-pill {
+      font-size: 0.74rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.7);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .block-body {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .block-body p + p {
+      margin-top: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.76rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.9);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* Listes */
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: #38bdf8;
+      box-shadow: 0 0 0 5px rgba(56,189,248,0.18);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .timeline-sub {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .timeline-bullets {
+      margin-top: 4px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .timeline-bullets ul {
+      list-style: disc;
+      margin-left: 16px;
+    }
+
+    .list-compact {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 0.86rem;
+    }
+
+    .list-compact li span.label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-right: 8px;
+    }
+
+    .list-compact li strong {
+      font-weight: 500;
+    }
+
+    /* Table mini (disponibilités) */
+
+    .availability {
+      margin-top: 6px;
+      border-radius: 14px;
+      border: 1px solid rgba(31,41,55,0.9);
+      overflow: hidden;
+      background: rgba(15,23,42,0.96);
+      font-size: 0.83rem;
+    }
+
+    .availability-row {
+      display: grid;
+      grid-template-columns: 1.1fr 2.1fr;
+      border-top: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .availability-row:first-child {
+      border-top: none;
+    }
+
+    .availability-cell {
+      padding: 6px 9px;
+    }
+
+    .availability-cell.label {
+      background: rgba(15,23,42,0.96);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+    }
+
+    /* Responsif */
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-side {
+        align-items: flex-start;
+      }
+      .hero-avatar {
+        align-self: flex-start;
+      }
+      .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-wrap {
+        margin-top: 20px;
+        padding-inline: 12px;
+      }
+      .hero {
+        padding: 18px 16px 14px;
+      }
+      section.block {
+        padding: 14px 12px 12px;
+      }
+      .sections-nav {
+        padding-inline: 4px;
+        gap: 2px;
+      }
+      .sections-nav a {
+        font-size: 0.76rem;
+        padding-inline: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- HERO / ENTÊTE -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-main">
+          <div class="hero-title">Curriculum Vitae</div>
+          <h1 class="hero-name">
+            <span>Mohammed Amraoui</span>
+          </h1>
+          <div class="hero-subtitle">
+            Doctorant en informatique à LIFO, spécialisé dans la <strong>provenance des données médicales</strong>, la sécurité,
+            et l’observabilité des pipelines de machine learning.
+          </div>
+
+          <div class="hero-tagline">
+            <span class="hero-tag-pill">Provenance &nbsp;•&nbsp; Données médicales &nbsp;•&nbsp; ML pipelines</span>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="hero-meta-dot"></span>
+              <span>Basé en France (UTC+1 / Europe-Paris)</span>
+            </div>
+            <div class="hero-meta-item">
+              <span>Actuellement en thèse &mdash; gestion et sécurité de la provenance des données</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="mailto:votre.email@exemple.com" class="btn btn-primary">
+              <span class="icon">✉️</span>
+              Me contacter
+            </a>
+            <a href="#publications" class="btn btn-outline">
+              <span class="icon">📚</span>
+              Voir les travaux / publications
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-avatar">
+            <span>MA</span>
+          </div>
+
+          <div class="hero-links">
+            <div class="hero-links-title">Contact &amp; profils</div>
+
+            <a href="mailto:votre.email@exemple.com" class="hero-link-item">
+              <span><strong>Email</strong> &mdash; votre.email@exemple.com</span>
+              <span>↗</span>
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" class="hero-link-item">
+              <span><strong>LinkedIn</strong> &mdash; lien vers votre profil</span>
+              <span>↗</span>
+            </a>
+
+            <a href="https://github.com/" target="_blank" class="hero-link-item">
+              <span><strong>GitHub</strong> &mdash; projets et code</span>
+              <span>↗</span>
+            </a>
+
+            <a href="#publications" class="hero-link-item">
+              <span><strong>Google Scholar</strong> &mdash; vos publications</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION DE SECTIONS -->
+    <nav class="sections-nav">
+      <a href="#apropos" class="primary">À propos</a>
+      <a href="#themes">Thématiques</a>
+      <a href="#formation">Formation</a>
+      <a href="#experience">Expériences</a>
+      <a href="#publications">Publications</a>
+      <a href="#competences">Compétences</a>
+      <a href="#disponibilites">Disponibilités</a>
+    </nav>
+
+    <!-- CONTENU -->
+    <div class="content-grid">
+      <!-- Colonne principale -->
+      <div class="col-main">
+        <!-- À PROPOS -->
+        <section id="apropos" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Résumé</h2>
+              <span class="block-pill">Profil</span>
+            </div>
+            <div class="block-body">
+              <p>
+                Doctorant en <strong>informatique</strong> à LIFO, travaillant sur la <strong>gestion de la provenance
+                des données médicales</strong>, l’intégration de techniques de <strong>machine learning</strong> et la
+                <strong>sécurité</strong> de ces traces sur toute leur durée de vie.
+              </p>
+              <p>
+                Intéressé par les <strong>modèles de provenance</strong> (PROV, extensions domaine médical),
+                l’<strong>observabilité</strong> des pipelines ML, et la mise en place de 
+                <strong>mécanismes d’accès basés sur la provenance</strong> (provenance-based access control).
+              </p>
+              <div class="pill-row">
+                <span class="pill">Provenance des données</span>
+                <span class="pill">Domaines médicaux</span>
+                <span class="pill">Machine Learning</span>
+                <span class="pill">Sécurité &amp; intégrité</span>
+                <span class="pill">Traçabilité</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- THÈSE / THÉMATIQUES -->
+        <section id="themes" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Thèse &amp; thématiques de recherche</h2>
+              <span class="block-pill">Recherche</span>
+            </div>
+            <div class="block-body">
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Depuis 2024 &mdash; LIFO</span>
+                    <span>Provenance &amp; données médicales</span>
+                  </div>
+                  <div class="timeline-title">
+                    Modèle de provenance pour les données médicales avec intégration de techniques de ML
+                  </div>
+                  <div class="timeline-sub">
+                    (Problématique 1)
+                  </div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Définir un <strong>modèle de provenance</strong> adapté aux flux de données en santé.</li>
+                      <li>Explorer l’<strong>extraction de provenance</strong> et la classification des événements avec des modèles ML.</li>
+                      <li>Étudier comment la provenance peut <strong>améliorer l’explicabilité</strong> des modèles.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Depuis 2024 &mdash; LIFO</span>
+                    <span>Sécurité &amp; intégrité</span>
+                  </div>
+                  <div class="timeline-title">
+                    Sécurité, fiabilité et intégrité des données sur le cycle de vie de la provenance
+                  </div>
+                  <div class="timeline-sub">
+                    (Problématique 2)
+                  </div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Mise en place de <strong>mécanismes de contrôle d’accès</strong> basés sur la provenance.</li>
+                      <li>Étude de l’<strong>intégrité</strong> et de la <strong>pérennité</strong> des traces de provenance.</li>
+                      <li>Exploration de solutions type <strong>ledger / blockchain</strong> pour la conservation de la provenance.</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FORMATION -->
+        <section id="formation" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Formation</h2>
+              <span class="block-pill">Académique</span>
+            </div>
+            <div class="block-body">
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Depuis 2024</span>
+                    <span>Orléans, France</span>
+                  </div>
+                  <div class="timeline-title">
+                    Doctorat en Informatique &mdash; Gestion de la provenance des données médicales
+                  </div>
+                  <div class="timeline-sub">
+                    LIFO &mdash; Laboratoire d’Informatique Fondamentale d’Orléans
+                  </div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>2022 &ndash; 2024</span>
+                    <span>Paris-Saclay</span>
+                  </div>
+                  <div class="timeline-title">
+                    International Master in Quantum and Distributed Computer Science
+                  </div>
+                  <div class="timeline-sub">
+                    Université Paris-Saclay
+                  </div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Avant 2022</span>
+                    <span>Maroc</span>
+                  </div>
+                  <div class="timeline-title">
+                    Master en Génie Informatique &amp; Licence en Physique
+                  </div>
+                  <div class="timeline-sub">
+                    Université Mohammed Premier &mdash; Oujda
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPÉRIENCES / PROJETS -->
+        <section id="experience" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Expériences &amp; projets</h2>
+              <span class="block-pill">R&amp;D</span>
+            </div>
+            <div class="block-body">
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>2024 &ndash; présent</span>
+                    <span>Doctorant &mdash; LIFO</span>
+                  </div>
+                  <div class="timeline-title">
+                    Gestion de la provenance des données médicales
+                  </div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Conception d’un <strong>modèle de provenance</strong> adapté aux scénarios médicaux.</li>
+                      <li>Étude de l’<strong>intégration de la provenance</strong> dans les pipelines de ML.</li>
+                      <li>Réflexion sur l’<strong>accès aux données</strong> basé sur la provenance.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Projets pédagogiques / R&amp;D</span>
+                    <span>Paris-Saclay &amp; stages</span>
+                  </div>
+                  <div class="timeline-title">
+                    Distributed systems, quantum computing, et machine learning
+                  </div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Mise en place de <strong>prototypes distribués</strong> pour la gestion de données.</li>
+                      <li>Exploration de <strong>use cases ML</strong> avec contraintes de traçabilité.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <!-- Tu peux dupliquer ce bloc pour ajouter d'autres expériences -->
+                <!--
+                <article class="timeline-item">
+                  ...
+                </article>
+                -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Colonne latérale -->
+      <aside class="col-side">
+        <!-- PUBLICATIONS -->
+        <section id="publications" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Publications / travaux</h2>
+              <span class="block-pill">Sélection</span>
+            </div>
+            <div class="block-body">
+              <ul class="list-compact">
+                <li>
+                  <span class="label">Préparation</span>
+                  <strong>Titre de ton premier article</strong><br>
+                  <span>Amraoui, M. et al. &mdash; (année, conférence / journal)</span>
+                </li>
+                <li>
+                  <span class="label">Préparation</span>
+                  <strong>Deuxième article lié à la provenance</strong><br>
+                  <span>Amraoui, M. et al. &mdash; (année, conférence / journal)</span>
+                </li>
+                <li>
+                  <span class="label">Mémoire</span>
+                  <strong>Master thesis &mdash; sujet de ton mémoire MSc</strong><br>
+                  <span>International Master in Quantum and Distributed Computer Science, Paris-Saclay</span>
+                </li>
+              </ul>
+              <p style="margin-top:8px; font-size:0.8rem; color:var(--muted);">
+                ✏️ Remplace ces entrées par tes vraies publications, avec liens vers PDF, arXiv ou HAL si besoin.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMPÉTENCES -->
+        <section id="competences" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Compétences</h2>
+              <span class="block-pill">Technique</span>
+            </div>
+            <div class="block-body">
+              <ul class="list-compact">
+                <li>
+                  <span class="label">Langages</span>
+                  <strong>Python</strong>, Java, C/C++, SQL
+                </li>
+                <li>
+                  <span class="label">Données &amp; ML</span>
+                  Pipelines ML, provenance, observabilité, évaluation de modèles
+                </li>
+                <li>
+                  <span class="label">Provenance</span>
+                  PROV, modèles de provenance, traçabilité des pipelines, intégrité des traces
+                </li>
+                <li>
+                  <span class="label">Web / systèmes</span>
+                  APIs, systèmes distribués, bases de données
+                </li>
+                <li>
+                  <span class="label">Langues</span>
+                  Français, Arabe, Anglais
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- DISPONIBILITÉS -->
+        <section id="disponibilites" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Disponibilités</h2>
+              <span class="block-pill">Collab</span>
+            </div>
+            <div class="block-body">
+              <p>
+                Ouvert aux collaborations en <strong>provenance des données</strong>, <strong>données médicales</strong>,
+                et <strong>observabilité des pipelines ML</strong> (recherche, projets académiques ou industriels).
+              </p>
+
+              <div class="availability">
+                <div class="availability-row">
+                  <div class="availability-cell label">Semaine</div>
+                  <div class="availability-cell">Lun &ndash; Ven &mdash; créneaux à définir selon projet</div>
+                </div>
+                <div class="availability-row">
+                  <div class="availability-cell label">Fuseau</div>
+                  <div class="availability-cell">Europe/Paris (UTC+1 / UTC+2 en été)</div>
+                </div>
+                <div class="availability-row">
+                  <div class="availability-cell label">Contact</div>
+                  <div class="availability-cell">
+                    <a href="mailto:votre.email@exemple.com">votre.email@exemple.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <p style="margin-top:6px; font-size:0.8rem; color:var(--muted);">
+                💡 Tu peux adapter ce bloc en mettant des horaires concrets, comme sur procko.pro.
+              </p>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
