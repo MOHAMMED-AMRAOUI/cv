@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mohammed Amraoui – Curriculum Vitae</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Mohammed Amraoui — Curriculum Vitae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Police Google (facultatif, tu peux enlever si besoin) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -27,12 +27,7 @@
       --transition-fast: 0.18s ease-out;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
@@ -40,24 +35,12 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .page-wrap { max-width: 1080px; margin: 32px auto 48px; padding: 0 16px 32px; }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page-wrap {
-      max-width: 1080px;
-      margin: 32px auto 48px;
-      padding: 0 16px 32px;
-    }
-
-    /* Header principal */
-
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(56, 189, 248, 0.18));
       border-radius: 28px;
@@ -71,7 +54,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero::before {
       content: "";
       position: absolute;
@@ -83,19 +65,15 @@
       opacity: 0.55;
       pointer-events: none;
     }
+    .hero-inner { position: relative; z-index: 1; display: contents; }
+    .hero-main { display: flex; flex-direction: column; gap: 12px; }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: contents;
+    .hero-title {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
     }
-
-    .hero-main {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
     .hero-name {
       font-size: clamp(2.1rem, 4vw, 2.6rem);
       font-weight: 700;
@@ -105,26 +83,16 @@
       align-items: baseline;
       gap: 8px;
     }
-
     .hero-name span {
       background: linear-gradient(120deg, #e5e7eb, #f9fafb);
       -webkit-background-clip: text;
       color: transparent;
     }
-
-    .hero-title {
-      font-size: 0.98rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-    }
-
     .hero-subtitle {
       font-size: 0.98rem;
       color: #e5e7eb;
-      max-width: 38rem;
+      max-width: 40rem;
     }
-
     .hero-tagline {
       margin-top: 2px;
       font-size: 0.9rem;
@@ -134,7 +102,6 @@
       gap: 8px;
       flex-wrap: wrap;
     }
-
     .hero-tag-pill {
       border-radius: var(--radius-full);
       border: 1px solid rgba(148, 163, 184, 0.5);
@@ -145,7 +112,6 @@
       color: #cbd5f5;
       background: rgba(15,23,42,0.55);
     }
-
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
@@ -154,7 +120,6 @@
       color: var(--muted);
       margin-top: 4px;
     }
-
     .hero-meta-item {
       display: inline-flex;
       align-items: center;
@@ -164,22 +129,14 @@
       background: rgba(15,23,42,0.75);
       border: 1px solid rgba(30,64,175,0.7);
     }
-
     .hero-meta-dot {
-      width: 7px;
-      height: 7px;
+      width: 7px; height: 7px;
       border-radius: 999px;
       background: #4ade80;
       box-shadow: 0 0 0 4px rgba(74,222,128,0.35);
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
     .btn {
       position: relative;
       display: inline-flex;
@@ -195,63 +152,38 @@
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
       white-space: nowrap;
     }
-
     .btn-primary {
       background: radial-gradient(circle at 0 0, #38bdf8, #0ea5e9);
       color: #0b1120;
       box-shadow: var(--shadow-soft-sm);
     }
-
-    .btn-primary:hover {
-      transform: translateY(-1px) translateZ(0);
-      box-shadow: 0 20px 45px rgba(59,130,246,0.55);
-    }
-
+    .btn-primary:hover { transform: translateY(-1px) translateZ(0); box-shadow: 0 20px 45px rgba(59,130,246,0.55); }
     .btn-outline {
       background: rgba(15,23,42,0.9);
       color: var(--text);
       border-color: rgba(148,163,184,0.6);
     }
-
     .btn-outline:hover {
       border-color: var(--accent);
       background: radial-gradient(circle at top left, rgba(56,189,248,0.25), rgba(15,23,42,0.95));
       transform: translateY(-1px) translateZ(0);
     }
+    .btn span.icon { font-size: 1rem; margin-right: 6px; }
 
-    .btn span.icon {
-      font-size: 1rem;
-      margin-right: 6px;
-    }
-
-    /* Colonne droite header */
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: flex-end;
-    }
-
+    /* HERO side */
+    .hero-side { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
     .hero-avatar {
-      width: 92px;
-      height: 92px;
+      width: 92px; height: 92px;
       border-radius: 26px;
       border: 1px solid rgba(148,163,184,0.5);
       background: radial-gradient(circle at 30% 0, #38bdf8, #0f172a 55%, #020617 100%);
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-soft-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 2.4rem;
     }
-
-    .hero-avatar span {
-      color: #e5e7eb;
-      font-weight: 700;
-    }
+    .hero-avatar span { color: #e5e7eb; font-weight: 700; }
 
     .hero-links {
       background: rgba(15,23,42,0.92);
@@ -264,14 +196,12 @@
       width: 100%;
       max-width: 260px;
     }
-
     .hero-links-title {
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
     }
-
     .hero-link-item {
       display: flex;
       align-items: center;
@@ -282,26 +212,11 @@
       transition: background var(--transition-fast), transform var(--transition-fast);
       font-size: 0.85rem;
     }
+    .hero-link-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hero-link-item:hover { background: rgba(30,64,175,0.5); transform: translateY(-1px); text-decoration: none; }
+    .hero-link-label { color: var(--muted); font-size: 0.8rem; }
 
-    .hero-link-item span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .hero-link-item:hover {
-      background: rgba(30,64,175,0.5);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    .hero-link-label {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    /* Navigation de sections */
-
+    /* Sections nav */
     .sections-nav {
       position: sticky;
       top: 8px;
@@ -318,7 +233,6 @@
       box-shadow: 0 18px 40px rgba(15,23,42,0.8);
       backdrop-filter: blur(14px);
     }
-
     .sections-nav a {
       padding: 6px 12px;
       border-radius: 999px;
@@ -328,35 +242,26 @@
       transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
       border: 1px solid transparent;
     }
-
     .sections-nav a:hover {
       background: rgba(30,64,175,0.6);
       color: #e5e7eb;
       border-color: rgba(96,165,250,0.9);
       transform: translateY(-1px);
     }
-
     .sections-nav a.primary {
       background: rgba(37,99,235,0.85);
       color: #e5e7eb;
       border-color: rgba(129,140,248,0.9);
     }
 
-    /* Layout du contenu */
-
+    /* Layout content */
     .content-grid {
       display: grid;
       grid-template-columns: minmax(0, 2.4fr) minmax(260px, 1.5fr);
       gap: 18px;
       margin-top: 4px;
     }
-
-    .col-main,
-    .col-side {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    .col-main, .col-side { display: flex; flex-direction: column; gap: 14px; }
 
     section.block {
       background: var(--bg-soft);
@@ -366,7 +271,6 @@
       box-shadow: 0 12px 30px rgba(15,23,42,0.9);
       position: relative;
     }
-
     section.block::before {
       content: "";
       position: absolute;
@@ -376,12 +280,7 @@
       opacity: 0.5;
       pointer-events: none;
     }
-
-    .block-inner {
-      position: relative;
-      z-index: 1;
-    }
-
+    .block-inner { position: relative; z-index: 1; }
     .block-header {
       display: flex;
       align-items: baseline;
@@ -389,14 +288,12 @@
       gap: 10px;
       margin-bottom: 6px;
     }
-
     .block-title {
       font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
     }
-
     .block-pill {
       font-size: 0.74rem;
       padding: 2px 8px;
@@ -407,23 +304,10 @@
       text-transform: uppercase;
       letter-spacing: 0.13em;
     }
+    .block-body { font-size: 0.9rem; color: var(--text); }
+    .block-body p + p { margin-top: 6px; }
 
-    .block-body {
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .block-body p + p {
-      margin-top: 4px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-top: 6px;
-    }
-
+    .pill-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
     .pill {
       font-size: 0.76rem;
       padding: 3px 8px;
@@ -434,32 +318,19 @@
       white-space: nowrap;
     }
 
-    /* Listes */
-
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 12px;
-    }
-
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .timeline-item { position: relative; padding-left: 12px; }
     .timeline-item::before {
       content: "";
       position: absolute;
       left: 0;
       top: 6px;
-      width: 5px;
-      height: 5px;
+      width: 5px; height: 5px;
       border-radius: 999px;
       background: #38bdf8;
       box-shadow: 0 0 0 5px rgba(56,189,248,0.18);
     }
-
     .timeline-header {
       display: flex;
       justify-content: space-between;
@@ -467,39 +338,21 @@
       font-size: 0.84rem;
       color: var(--muted);
       margin-bottom: 2px;
+      flex-wrap: wrap;
     }
-
-    .timeline-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .timeline-sub {
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-
-    .timeline-bullets {
-      margin-top: 4px;
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-
-    .timeline-bullets ul {
-      list-style: disc;
-      margin-left: 16px;
-    }
+    .timeline-title { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+    .timeline-sub { font-size: 0.84rem; color: var(--muted); }
+    .timeline-bullets { margin-top: 4px; font-size: 0.84rem; color: var(--muted); }
+    .timeline-bullets ul { list-style: disc; margin-left: 16px; }
 
     .list-compact {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       margin-top: 6px;
       font-size: 0.86rem;
     }
-
     .list-compact li span.label {
       color: var(--muted);
       font-size: 0.82rem;
@@ -507,36 +360,24 @@
       letter-spacing: 0.16em;
       margin-right: 8px;
     }
+    .list-compact li strong { font-weight: 500; }
 
-    .list-compact li strong {
-      font-weight: 500;
-    }
-
-    /* Table mini (disponibilités) */
-
+    /* Availability mini-table */
     .availability {
-      margin-top: 6px;
+      margin-top: 8px;
       border-radius: 14px;
       border: 1px solid rgba(31,41,55,0.9);
       overflow: hidden;
       background: rgba(15,23,42,0.96);
       font-size: 0.83rem;
     }
-
     .availability-row {
       display: grid;
       grid-template-columns: 1.1fr 2.1fr;
       border-top: 1px solid rgba(31,41,55,0.9);
     }
-
-    .availability-row:first-child {
-      border-top: none;
-    }
-
-    .availability-cell {
-      padding: 6px 9px;
-    }
-
+    .availability-row:first-child { border-top: none; }
+    .availability-cell { padding: 6px 9px; }
     .availability-cell.label {
       background: rgba(15,23,42,0.96);
       color: var(--muted);
@@ -545,48 +386,34 @@
       font-size: 0.78rem;
     }
 
-    /* Responsif */
-
-    @media (max-width: 880px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-side {
-        align-items: flex-start;
-      }
-      .hero-avatar {
-        align-self: flex-start;
-      }
-      .content-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* Footer small */
+    .footnote {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
     }
 
+    /* Responsive */
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-side { align-items: flex-start; }
+      .hero-avatar { align-self: flex-start; }
+      .content-grid { grid-template-columns: minmax(0, 1fr); }
+    }
     @media (max-width: 640px) {
-      .page-wrap {
-        margin-top: 20px;
-        padding-inline: 12px;
-      }
-      .hero {
-        padding: 18px 16px 14px;
-      }
-      section.block {
-        padding: 14px 12px 12px;
-      }
-      .sections-nav {
-        padding-inline: 4px;
-        gap: 2px;
-      }
-      .sections-nav a {
-        font-size: 0.76rem;
-        padding-inline: 10px;
-      }
+      .page-wrap { margin-top: 20px; padding-inline: 12px; }
+      .hero { padding: 18px 16px 14px; }
+      section.block { padding: 14px 12px 12px; }
+      .sections-nav { padding-inline: 4px; gap: 2px; }
+      .sections-nav a { font-size: 0.76rem; padding-inline: 10px; }
     }
   </style>
 </head>
+
 <body>
   <div class="page-wrap">
-    <!-- HERO / ENTÊTE -->
+    <!-- HERO -->
     <header class="hero">
       <div class="hero-inner">
         <div class="hero-main">
@@ -594,23 +421,25 @@
           <h1 class="hero-name">
             <span>Mohammed Amraoui</span>
           </h1>
+
           <div class="hero-subtitle">
-            Doctorant en informatique à LIFO (Université d'Orléans), spécialisé dans la
-            <strong>provenance des données médicales</strong>, la sécurité,
-            et l’observabilité des pipelines de machine learning.
+            <strong>Doctorant en informatique</strong> (2024–2027) — INSA Centre Val de Loire (Bourges) /
+            LIFO (Université d’Orléans). Travaux sur la <strong>provenance des données</strong>,
+            la <strong>sécurité</strong>, et l’<strong>observabilité</strong> des pipelines de machine learning,
+            avec une expérience en <strong>data science</strong> et <strong>deep learning</strong>.
           </div>
 
           <div class="hero-tagline">
-            <span class="hero-tag-pill">Provenance &nbsp;•&nbsp; Données médicales &nbsp;•&nbsp; ML pipelines</span>
+            <span class="hero-tag-pill">Provenance • Données médicales • ML / DL • Pipelines • Sécurité</span>
           </div>
 
           <div class="hero-meta">
             <div class="hero-meta-item">
               <span class="hero-meta-dot"></span>
-              <span>Basé à Orléans, France (Europe/Paris)</span>
+              <span>Basé en France — Fuseau Europe/Paris</span>
             </div>
             <div class="hero-meta-item">
-              <span>Actuellement en thèse — gestion et sécurité de la provenance des données</span>
+              <span>Ouvert aux collaborations (recherche / projets académiques / industriels)</span>
             </div>
           </div>
 
@@ -619,15 +448,19 @@
               <span class="icon">✉️</span>
               Me contacter
             </a>
-            <a href="#publications" class="btn btn-outline">
-              <span class="icon">📚</span>
-              Voir les travaux / publications
+            <a href="#experience" class="btn btn-outline">
+              <span class="icon">🧪</span>
+              Voir l’expérience
+            </a>
+            <a href="#competences" class="btn btn-outline">
+              <span class="icon">🛠️</span>
+              Compétences
             </a>
           </div>
         </div>
 
         <div class="hero-side">
-          <div class="hero-avatar">
+          <div class="hero-avatar" title="Avatar">
             <span>MA</span>
           </div>
 
@@ -644,18 +477,18 @@
               <span>↗</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/mohammed-amraoui" target="_blank" class="hero-link-item">
-              <span><strong>LinkedIn</strong> &mdash; profil LinkedIn</span>
+            <a href="https://www.linkedin.com/in/mohammed-amraoui" target="_blank" rel="noopener" class="hero-link-item">
+              <span><strong>LinkedIn</strong> &mdash; profil</span>
               <span>↗</span>
             </a>
 
-            <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank" class="hero-link-item">
-              <span><strong>GitHub</strong> &mdash; projets et code</span>
+            <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank" rel="noopener" class="hero-link-item">
+              <span><strong>GitHub</strong> &mdash; /MOHAMMED-AMRAOUI</span>
               <span>↗</span>
             </a>
 
-            <a href="https://scholar.google.com/" target="_blank" class="hero-link-item">
-              <span><strong>Google Scholar</strong> &mdash; profil Google Scholar</span>
+            <a href="https://www.kaggle.com/mohammedamraoui77" target="_blank" rel="noopener" class="hero-link-item">
+              <span><strong>Kaggle</strong> &mdash; /mohammedamraoui77</span>
               <span>↗</span>
             </a>
           </div>
@@ -663,20 +496,21 @@
       </div>
     </header>
 
-    <!-- NAVIGATION DE SECTIONS -->
+    <!-- NAV -->
     <nav class="sections-nav">
       <a href="#apropos" class="primary">À propos</a>
       <a href="#themes">Thématiques</a>
       <a href="#formation">Formation</a>
       <a href="#experience">Expériences</a>
-      <a href="#publications">Publications</a>
+      <a href="#projets">Projets</a>
       <a href="#competences">Compétences</a>
+      <a href="#certifs">Certifications</a>
       <a href="#disponibilites">Disponibilités</a>
     </nav>
 
-    <!-- CONTENU -->
+    <!-- CONTENT -->
     <div class="content-grid">
-      <!-- Colonne principale -->
+      <!-- MAIN -->
       <div class="col-main">
         <!-- À PROPOS -->
         <section id="apropos" class="block">
@@ -687,27 +521,29 @@
             </div>
             <div class="block-body">
               <p>
-                Doctorant en <strong>informatique</strong> à LIFO, travaillant sur la
-                <strong>gestion de la provenance des données médicales</strong>, l’intégration de techniques de
-                <strong>machine learning</strong> et la <strong>sécurité</strong> de ces traces sur toute leur durée de vie.
+                Doctorant en <strong>informatique</strong>, avec un parcours orienté <strong>data science</strong>,
+                <strong>machine learning</strong> et <strong>systèmes</strong>.
+                Je travaille sur la <strong>gestion de la provenance des données</strong> (traçabilité),
+                notamment dans des scénarios <strong>médicaux</strong>, en lien avec la <strong>sécurité</strong>
+                et l’<strong>intégrité</strong> des traces sur tout leur cycle de vie.
               </p>
               <p>
-                Intéressé par les <strong>modèles de provenance</strong> (PROV et extensions pour le domaine médical),
-                l’<strong>observabilité</strong> des pipelines ML, et la mise en place de
-                <strong>mécanismes d’accès basés sur la provenance</strong> (provenance-based access control).
-                Expérience pratique en <strong>data science</strong>, <strong>deep learning</strong> et
-                <strong>systèmes distribués</strong>.
+                Expérience pratique en <strong>deep learning</strong> (PyTorch / TensorFlow),
+                <strong>GNN</strong> (PyTorch Geometric), traitement de données, ETL, visualisation,
+                et déploiement (Flask, Android).
               </p>
               <p>
                 Vie associative : ancien membre du club <strong>Quark Physique</strong>.
               </p>
+
               <div class="pill-row">
-                <span class="pill">Provenance des données</span>
-                <span class="pill">Domaines médicaux</span>
-                <span class="pill">Machine Learning &amp; Deep Learning</span>
+                <span class="pill">Provenance / Traçabilité</span>
+                <span class="pill">Données médicales</span>
+                <span class="pill">ML &amp; Deep Learning</span>
+                <span class="pill">NLP</span>
                 <span class="pill">Sécurité &amp; intégrité</span>
-                <span class="pill">Traçabilité</span>
-                <span class="pill">Systèmes distribués</span>
+                <span class="pill">BigQuery / Cloud</span>
+                <span class="pill">HPC / Parallèle</span>
               </div>
             </div>
           </div>
@@ -717,47 +553,37 @@
         <section id="themes" class="block">
           <div class="block-inner">
             <div class="block-header">
-              <h2 class="block-title">Thèse &amp; thématiques de recherche</h2>
+              <h2 class="block-title">Thèse &amp; thématiques</h2>
               <span class="block-pill">Recherche</span>
             </div>
             <div class="block-body">
               <div class="timeline">
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>Depuis 2024 &mdash; LIFO, Université d'Orléans</span>
-                    <span>Provenance &amp; données médicales</span>
+                    <span>2024 – 2027 — INSA Centre Val de Loire (Bourges) / LIFO</span>
+                    <span>Provenance &amp; santé</span>
                   </div>
-                  <div class="timeline-title">
-                    Modèle de provenance pour les données médicales avec intégration de techniques de ML
-                  </div>
-                  <div class="timeline-sub">
-                    (Problématique 1)
-                  </div>
+                  <div class="timeline-title">Gestion de la provenance des données (cas d’usage médical)</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Définir un <strong>modèle de provenance</strong> adapté aux flux de données en santé.</li>
-                      <li>Explorer l’<strong>extraction de provenance</strong> et la classification des événements avec des modèles ML.</li>
-                      <li>Étudier comment la provenance peut <strong>améliorer l’explicabilité</strong> des modèles.</li>
+                      <li>Modélisation de provenance adaptée aux flux et aux contraintes du domaine médical.</li>
+                      <li>Intégration de la provenance dans des pipelines de machine learning (traçabilité des étapes, des données et des artefacts).</li>
+                      <li>Étude de l’exploitation de la provenance pour l’analyse, l’audit et l’amélioration de la confiance.</li>
                     </ul>
                   </div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>Depuis 2024 &mdash; LIFO, Université d'Orléans</span>
+                    <span>2024 – 2027 — Recherche doctorale</span>
                     <span>Sécurité &amp; intégrité</span>
                   </div>
-                  <div class="timeline-title">
-                    Sécurité, fiabilité et intégrité des données sur le cycle de vie de la provenance
-                  </div>
-                  <div class="timeline-sub">
-                    (Problématique 2)
-                  </div>
+                  <div class="timeline-title">Sécurité, fiabilité et pérennité des traces de provenance</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Mise en place de <strong>mécanismes de contrôle d’accès</strong> basés sur la provenance.</li>
-                      <li>Étude de l’<strong>intégrité</strong> et de la <strong>pérennité</strong> des traces de provenance.</li>
-                      <li>Exploration de solutions type <strong>ledger / blockchain</strong> pour la conservation de la provenance.</li>
+                      <li>Protection et intégrité des traces de provenance sur la durée (durabilité, vérifiabilité).</li>
+                      <li>Contrôle d’accès et auditabilité (approches de type provenance-based access control).</li>
+                      <li>Exploration de solutions type ledger / blockchain pour la conservation et la non-répudiation.</li>
                     </ul>
                   </div>
                 </article>
@@ -777,67 +603,99 @@
               <div class="timeline">
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>Depuis 2024</span>
-                    <span>Orléans, France</span>
+                    <span>2024 – 2027</span>
+                    <span>Bourges, France</span>
                   </div>
-                  <div class="timeline-title">
-                    Doctorat en Informatique &mdash; Gestion de la provenance des données médicales
-                  </div>
-                  <div class="timeline-sub">
-                    LIFO &mdash; Laboratoire d’Informatique Fondamentale d’Orléans
-                  </div>
+                  <div class="timeline-title">Doctorat en Informatique — Doctorant en Informatique</div>
+                  <div class="timeline-sub">INSA Centre Val de Loire / (collaboration LIFO — Université d’Orléans)</div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2023 &ndash; 2024</span>
+                    <span>2023 – 2024</span>
                     <span>Paris, France</span>
                   </div>
-                  <div class="timeline-title">
-                    M2 Informatique Quantique, Parallèle et Distribuée<br>
-                    (International Master in Quantum and Distributed Computer Science)
-                  </div>
-                  <div class="timeline-sub">
-                    Université Paris-Saclay
-                  </div>
+                  <div class="timeline-title">M2 Informatique Quantique, Parallèle et Distribuée</div>
+                  <div class="timeline-sub">Université Paris-Saclay</div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2021 &ndash; 2023</span>
+                    <span>2021 – 2023</span>
                     <span>Oujda, Maroc</span>
                   </div>
-                  <div class="timeline-title">
-                    Master Spécialisé en Ingénierie Informatique
-                  </div>
-                  <div class="timeline-sub">
-                    Faculté des Sciences d’Oujda &mdash; Université Mohammed Premier
-                  </div>
+                  <div class="timeline-title">Master Spécialisé en Ingénierie Informatique</div>
+                  <div class="timeline-sub">Faculté des Sciences d’Oujda — Université Mohammed Premier</div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2018 &ndash; 2021</span>
+                    <span>2018 – 2021</span>
                     <span>Oujda, Maroc</span>
                   </div>
-                  <div class="timeline-title">
-                    Licence fondamentale en Sciences de la matière physique
+                  <div class="timeline-title">Licence fondamentale en Sciences de la matière physique</div>
+                  <div class="timeline-sub">Faculté des Sciences d’Oujda</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPÉRIENCES -->
+        <section id="experience" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Expériences professionnelles</h2>
+              <span class="block-pill">Stages / R&amp;D</span>
+            </div>
+            <div class="block-body">
+              <div class="timeline">
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>2024 – 2027</span>
+                    <span>Doctorant — INSA Centre Val de Loire</span>
                   </div>
-                  <div class="timeline-sub">
-                    Faculté des Sciences d’Oujda
+                  <div class="timeline-title">Thèse : provenance / sécurité / observabilité</div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Travaux autour de la provenance des données, en particulier dans un contexte médical.</li>
+                      <li>Exploration de l’intégration de la traçabilité dans des pipelines ML.</li>
+                      <li>Réflexion sur contrôle d’accès, intégrité et conservation des traces.</li>
+                    </ul>
                   </div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2017 &ndash; 2018</span>
-                    <span>Beni Drar, Maroc</span>
+                    <span>Mar 2024 – Aoû 2024 (6 mois)</span>
+                    <span>Toulouse, France</span>
                   </div>
-                  <div class="timeline-title">
-                    Baccalauréat &mdash; Sciences de la Vie et de la Terre
+                  <div class="timeline-title">PFE — Apprentissage profond géométrique pour le suivi des particules de haute énergie</div>
+                  <div class="timeline-sub">Laboratoire des 2 Infinis (L2IT)</div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Revue de littérature sur les <strong>Graph Neural Networks (GNN)</strong>.</li>
+                      <li>Implémentation, entraînement et évaluation de modèles avancés de GNN dans un contexte multi-échelle et multi-topologique.</li>
+                      <li><strong>Outils</strong> : Python, PyTorch, PyTorch Geometric, Scikit-Learn, CUDA.</li>
+                    </ul>
                   </div>
-                  <div class="timeline-sub">
-                    Lycée Ibnou Zouhr
+                </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>Févr 2023 – Juill 2023 (6 mois)</span>
+                    <span>Oujda, Maroc</span>
+                  </div>
+                  <div class="timeline-title">PFE — Analyse de données en santé &amp; modélisation ML pour la prédiction de chutes</div>
+                  <div class="timeline-sub">Entreprise AEVAweb</div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>Conception de la base de données.</li>
+                      <li>Script ETL automatisé : nettoyage, conversion de formats, fusion multi-sources, anonymisation.</li>
+                      <li>Visualisation et statistiques avec Looker Studio (séries temporelles, histogrammes, cartes, camemberts).</li>
+                      <li>Modèle ML pour prédire la probabilité de chute (âge, pression artérielle, SpO2, fréquence cardiaque, température, glucose).</li>
+                      <li><strong>Outils</strong> : Python, Looker Studio (Google Data Studio), BigQuery, BigQuery ML.</li>
+                    </ul>
                   </div>
                 </article>
               </div>
@@ -845,126 +703,135 @@
           </div>
         </section>
 
-        <!-- EXPÉRIENCES / PROJETS -->
-        <section id="experience" class="block">
+        <!-- PROJETS -->
+        <section id="projets" class="block">
           <div class="block-inner">
             <div class="block-header">
-              <h2 class="block-title">Expériences &amp; projets</h2>
-              <span class="block-pill">R&amp;D</span>
+              <h2 class="block-title">Projets académiques</h2>
+              <span class="block-pill">Sélection</span>
             </div>
             <div class="block-body">
               <div class="timeline">
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2024 &ndash; présent</span>
-                    <span>Doctorant &mdash; LIFO, Université d'Orléans</span>
+                    <span>2023</span>
+                    <span>NLP / Deep Learning</span>
                   </div>
-                  <div class="timeline-title">
-                    Gestion de la provenance des données médicales
-                  </div>
+                  <div class="timeline-title">Classification de textes arabes basée sur des réseaux de neurones</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Conception d’un <strong>modèle de provenance</strong> adapté aux scénarios médicaux.</li>
-                      <li>Étude de l’<strong>intégration de la provenance</strong> dans les pipelines de ML.</li>
-                      <li>Réflexion sur l’<strong>accès aux données</strong> basé sur la provenance et la sécurité des traces.</li>
+                      <li>Normalisation : suppression diacritiques, mots non arabes, ponctuation, chiffres, stopwords, espaces en trop.</li>
+                      <li>Construction d’un dataset (phrases, mots, racines, lemmes, caractères).</li>
+                      <li>Création du modèle deep learning.</li>
+                      <li><strong>Outils</strong> : Python, TensorFlow, Keras, Scikit-Learn.</li>
                     </ul>
                   </div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>Mar 2024 &ndash; Aoû 2024</span>
-                    <span>Toulouse, France</span>
+                    <span>2022</span>
+                    <span>Systèmes / Recherche</span>
                   </div>
-                  <div class="timeline-title">
-                    PFE &mdash; Apprentissage profond géométrique pour le suivi des particules de haute énergie
-                  </div>
-                  <div class="timeline-sub">
-                    Laboratoire des 2 Infinis (L2IT)
-                  </div>
+                  <div class="timeline-title">Moteur de recherche multilingue (arabe, anglais, chinois…)</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Revue de la littérature sur les <strong>Réseaux de Neurones Graphiques (GNN)</strong>.</li>
-                      <li>Implémentation, entraînement et évaluation de modèles avancés de GNN dans un contexte multi-échelle et multi-topologique.</li>
-                      <li>Utilisation de <strong>Python, PyTorch, Sklearn, CUDA</strong>.</li>
+                      <li>Configuration et indexation de données multilingues.</li>
+                      <li>Interface Java.</li>
+                      <li><strong>Outils</strong> : Java, ReactJS, Bootstrap 5, Apache Solr, Apache Tika.</li>
                     </ul>
                   </div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>Févr 2023 &ndash; Juill 2023</span>
-                    <span>Oujda, Maroc</span>
+                    <span>2022</span>
+                    <span>Machine Learning</span>
                   </div>
-                  <div class="timeline-title">
-                    PFE &mdash; Analyse de données en santé et modélisation de ML pour la prédiction de chutes
-                  </div>
-                  <div class="timeline-sub">
-                    Entreprise AEVAweb
-                  </div>
+                  <div class="timeline-title">k-NN en Java pour classification basée sur des caractéristiques météo</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Conception de la <strong>base de données</strong> et scripts ETL automatisés (nettoyage, fusion, anonymisation).</li>
-                      <li>Visualisation des données dans Looker Studio (séries temporelles, cartes, histogrammes).</li>
-                      <li>Construction d’un <strong>modèle de machine learning</strong> pour prédire la probabilité de chute à partir de données physiologiques.</li>
-                      <li>Outils : Python, Google Data Studio, BigQuery, BigQuery ML.</li>
+                      <li>Extraction et normalisation des données (weather.nominal.arff).</li>
+                      <li>Implémentation kNN en Java + analyse / prétraitement.</li>
+                      <li><strong>Outils</strong> : Java, Java Swing.</li>
                     </ul>
                   </div>
                 </article>
 
                 <article class="timeline-item">
                   <div class="timeline-header">
-                    <span>2022 &ndash; 2023</span>
-                    <span>Projets académiques</span>
+                    <span>2022</span>
+                    <span>Déploiement</span>
                   </div>
-                  <div class="timeline-title">
-                    Data science, NLP, systèmes distribués et applications IA
-                  </div>
+                  <div class="timeline-title">Prédiction des prix des maisons : construction &amp; déploiement d’un modèle ML</div>
                   <div class="timeline-bullets">
                     <ul>
-                      <li>Développement d’une application Android de génération de musique avec IA générative (Meta MusicGen) et API Flask.</li>
-                      <li>Projet de <strong>classification de textes arabes</strong> par réseaux de neurones (prétraitement, création de dataset, modèle TensorFlow/Keras).</li>
-                      <li>Moteur de recherche multilingue (arabe, anglais, chinois, ...) avec Java, React, Apache Solr et Tika.</li>
-                      <li>Projets ML : k plus proches voisins sur données météorologiques, prédiction des prix des maisons (Python, Flask, Sklearn).</li>
+                      <li>Analyse et prétraitement, modélisation / entraînement, évaluation et déploiement.</li>
+                      <li><strong>Outils</strong> : Python, Pandas, Numpy, Scikit-Learn, Flask, HTML, CSS.</li>
                     </ul>
                   </div>
                 </article>
+
+                <article class="timeline-item">
+                  <div class="timeline-header">
+                    <span>2022 – 2023</span>
+                    <span>IA générative</span>
+                  </div>
+                  <div class="timeline-title">Application Android : génération de musique avec IA générative (Meta MusicGen)</div>
+                  <div class="timeline-bullets">
+                    <ul>
+                      <li>État de l’art : MusicLM, Mubert, Riffusion, MusicGen + comparaison des solutions.</li>
+                      <li>API Flask pour exposer le modèle MusicGen.</li>
+                      <li>Application Android connectée à l’API.</li>
+                      <li><strong>Outils</strong> : Python, Android, Flask API, PyTorch.</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <div class="pill-row">
+                <span class="pill">NLP arabe</span>
+                <span class="pill">GNN</span>
+                <span class="pill">ETL</span>
+                <span class="pill">BigQuery</span>
+                <span class="pill">Flask</span>
+                <span class="pill">Android</span>
+                <span class="pill">Solr / Tika</span>
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      <!-- Colonne latérale -->
+      <!-- SIDE -->
       <aside class="col-side">
-        <!-- PUBLICATIONS -->
+        <!-- PUBLICATIONS / TRAVAUX -->
         <section id="publications" class="block">
           <div class="block-inner">
             <div class="block-header">
-              <h2 class="block-title">Publications / travaux</h2>
+              <h2 class="block-title">Travaux</h2>
               <span class="block-pill">Sélection</span>
             </div>
             <div class="block-body">
               <ul class="list-compact">
                 <li>
                   <span class="label">En cours</span>
-                  <strong>Thèse de doctorat &mdash; Gestion de la provenance des données médicales</strong><br>
-                  <span>Amraoui, M. &mdash; LIFO, Université d'Orléans (depuis 2024)</span>
+                  <strong>Thèse — Gestion de la provenance des données (cas d’usage médical)</strong><br />
+                  <span>INSA Centre Val de Loire / LIFO — 2024–2027</span>
                 </li>
                 <li>
-                  <span class="label">Mémoire</span>
-                  <strong>Analyse de données en santé et modélisation de ML pour la prédiction de chutes</strong><br>
-                  <span>PFE Master Ingénierie Informatique, AEVAweb, Oujda (2023)</span>
+                  <span class="label">PFE</span>
+                  <strong>Apprentissage profond géométrique pour le suivi des particules de haute énergie</strong><br />
+                  <span>L2IT, Toulouse — Mar 2024–Aoû 2024</span>
                 </li>
                 <li>
-                  <span class="label">Projet</span>
-                  <strong>Apprentissage profond géométrique pour le suivi de particules de haute énergie</strong><br>
-                  <span>PFE M2 Quantum and Distributed Computer Science, L2IT, Toulouse (2024)</span>
+                  <span class="label">PFE</span>
+                  <strong>Analyse de données en santé &amp; ML pour la prédiction de chutes</strong><br />
+                  <span>AEVAweb, Oujda — Févr 2023–Juill 2023</span>
                 </li>
               </ul>
               <p style="margin-top:8px; font-size:0.8rem; color:var(--muted);">
-                ✏️ Tu pourras compléter cette section avec tes articles (conférences, journaux) dès qu’ils seront publiés
-                et ajouter des liens vers les PDFs, HAL, arXiv, etc.
+                ✏️ Tu peux ajouter ici tes articles (conférences / journaux), et des liens (HAL, arXiv, PDF, etc.).
               </p>
             </div>
           </div>
@@ -980,46 +847,95 @@
             <div class="block-body">
               <ul class="list-compact">
                 <li>
+                  <span class="label">Logiciels</span>
+                  <strong>Microsoft Office</strong> (Word, Excel, PowerPoint)
+                </li>
+                <li>
                   <span class="label">Langages</span>
-                  <strong>Python</strong>, Java, C/C++, SQL
+                  <strong>Python</strong>, Java, C, C++, SQL
                 </li>
                 <li>
                   <span class="label">Data &amp; ML</span>
-                  Supervised / Unsupervised learning, Deep Learning, TensorFlow, PyTorch, PyTorch Geometric,
-                  Scikit-Learn, Pandas, Numpy, Matplotlib, Seaborn, BigQuery ML
+                  Supervised/Unsupervised Learning, Deep Learning, Data Science,
+                  TensorFlow, PyTorch, PyTorch Geometric, Scikit-Learn,
+                  Pandas, Numpy, Matplotlib, Scipy, Seaborn, BigQuery ML
                 </li>
                 <li>
-                  <span class="label">Provenance</span>
-                  PROV, modèles de provenance, traçabilité de pipelines ML, intégrité des traces,
-                  provenance-based access control
+                  <span class="label">Big Data</span>
+                  BigQuery
                 </li>
                 <li>
-                  <span class="label">Big Data &amp; Cloud</span>
-                  BigQuery, Google Cloud, traitement de grandes volumétries de données
+                  <span class="label">BI</span>
+                  Google Data Studio / Looker Studio
                 </li>
                 <li>
-                  <span class="label">Web / systèmes</span>
-                  Développement Web (HTML, CSS, JavaScript, React), APIs, systèmes distribués,
-                  bases de données relationnelles
+                  <span class="label">Cloud</span>
+                  Google Cloud
                 </li>
                 <li>
-                  <span class="label">HPC / Parallèle</span>
+                  <span class="label">Web</span>
+                  HTML, CSS, JavaScript, (bases React)
+                </li>
+                <li>
+                  <span class="label">Versioning</span>
+                  GitLab
+                </li>
+                <li>
+                  <span class="label">Parallèle / HPC</span>
                   OpenMP, AVX2, BLAS &amp; LAPACK, CUDA, OpenMPI
-                </li>
-                <li>
-                  <span class="label">Outils</span>
-                  Google Data Studio / Looker Studio, GitLab, Linux
-                </li>
-                <li>
-                  <span class="label">Certifications</span>
-                  IBM Python for Data Science, IBM Data Science Tools, Cisco CCNA Introduction to Networks,
-                  Scrum Foundation Professional Certificate, cours en ligne (Coursera, SoloLearn, HackerRank)
                 </li>
                 <li>
                   <span class="label">Langues</span>
                   Français (C1), Anglais (C1), Arabe (C2)
                 </li>
               </ul>
+
+              <div class="pill-row">
+                <span class="pill">PyTorch Geometric</span>
+                <span class="pill">BigQuery ML</span>
+                <span class="pill">CUDA</span>
+                <span class="pill">OpenMP</span>
+                <span class="pill">Flask</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifs" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Certifications</h2>
+              <span class="block-pill">Formation continue</span>
+            </div>
+            <div class="block-body">
+              <ul class="list-compact">
+                <li><span class="label">IBM</span><strong>Python for Data Science</strong></li>
+                <li><span class="label">IBM</span><strong>Data Science Tools</strong></li>
+                <li><span class="label">Cisco</span><strong>CCNA Introduction to Networks</strong></li>
+                <li><span class="label">CertiProf</span><strong>Scrum Foundation Professional Certificate</strong></li>
+                <li><span class="label">SoloLearn</span><strong>Python</strong> (et HackerRank Python)</li>
+                <li><span class="label">SoloLearn</span><strong>Java</strong> (et HackerRank Java)</li>
+                <li><span class="label">HackerRank</span><strong>SQL</strong></li>
+                <li><span class="label">Coursera</span><strong>Supervised ML: Regression &amp; Classification</strong></li>
+                <li><span class="label">Coursera</span><strong>Data Analysis with Python</strong></li>
+                <li><span class="label">Coursera</span><strong>Analyzing &amp; Visualizing Data in Looker</strong></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIE ASSOCIATIVE -->
+        <section id="asso" class="block">
+          <div class="block-inner">
+            <div class="block-header">
+              <h2 class="block-title">Vie associative</h2>
+              <span class="block-pill">Extra</span>
+            </div>
+            <div class="block-body">
+              <p>
+                Ancien membre du club <strong>Quark Physique</strong>.
+              </p>
             </div>
           </div>
         </section>
@@ -1033,14 +949,14 @@
             </div>
             <div class="block-body">
               <p>
-                Ouvert aux collaborations en <strong>provenance des données</strong>, <strong>données médicales</strong>,
-                et <strong>observabilité des pipelines ML</strong> (recherche, projets académiques ou industriels).
+                Ouvert aux collaborations en <strong>provenance</strong>, <strong>données médicales</strong>,
+                <strong>sécurité</strong> et <strong>observabilité</strong> des pipelines ML.
               </p>
 
               <div class="availability">
                 <div class="availability-row">
                   <div class="availability-cell label">Semaine</div>
-                  <div class="availability-cell">Lun &ndash; Ven &mdash; créneaux à définir selon le projet</div>
+                  <div class="availability-cell">Lun – Ven — créneaux à définir selon le projet</div>
                 </div>
                 <div class="availability-row">
                   <div class="availability-cell label">Fuseau</div>
@@ -1054,14 +970,22 @@
                 </div>
               </div>
 
-              <p style="margin-top:6px; font-size:0.8rem; color:var(--muted);">
-                💡 Tu peux adapter ce bloc en ajoutant des créneaux précis (par exemple : mar/jeu après-midi, etc.).
+              <p style="margin-top:8px; font-size:0.8rem; color:var(--muted);">
+                💡 Si tu veux, je peux aussi te faire une version “1 page PDF” (imprimable) avec la même identité visuelle.
               </p>
             </div>
           </div>
         </section>
       </aside>
     </div>
+
+    <div class="footnote">
+      © <span id="year"></span> — Mohammed Amraoui • Dernière mise à jour : 2024–2025
+    </div>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
