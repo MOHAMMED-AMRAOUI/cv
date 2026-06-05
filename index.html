@@ -6,21 +6,16 @@
 
   <title>Mohammed Amraoui | Doctorant en Informatique</title>
 
-  <meta name="description" content="Portfolio de Mohammed Amraoui, doctorant en informatique à INSA Centre Val de Loire. Compétences en intelligence artificielle, data science, big data, cloud, développement web et programmation parallèle." />
+  <meta name="description" content="Portfolio de Mohammed Amraoui, doctorant en informatique à INSA Centre Val de Loire." />
 
   <style>
     :root {
-      --bg: #050816;
-      --bg-soft: #0b1020;
-      --card: rgba(255, 255, 255, 0.075);
-      --card-hover: rgba(255, 255, 255, 0.12);
-      --text: #f8fafc;
-      --muted: #aab4c8;
-      --line: rgba(255, 255, 255, 0.14);
-      --accent: #38bdf8;
-      --accent2: #8b5cf6;
-      --radius: 24px;
-      --max: 1150px;
+      --text: #111111;
+      --muted: #555555;
+      --light: #f6f6f6;
+      --border: #dddddd;
+      --accent: #1f4e79;
+      --max: 1100px;
     }
 
     * {
@@ -35,17 +30,19 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 35%),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.20), transparent 35%),
-        var(--bg);
-      line-height: 1.7;
+      line-height: 1.65;
+      font-size: 16px;
     }
 
     a {
-      color: inherit;
+      color: var(--accent);
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -54,366 +51,230 @@
     }
 
     header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(5, 8, 22, 0.78);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
+      z-index: 10;
     }
 
     nav {
-      height: 76px;
+      height: 70px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #020617;
-      font-weight: 900;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--text);
+      text-decoration: none;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
+      gap: 22px;
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover {
+    .nav-links a {
       color: var(--text);
+      text-decoration: none;
     }
 
-    .nav-button {
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
     section {
-      padding: 85px 0;
+      padding: 55px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .hero {
-      min-height: calc(100vh - 76px);
-      display: grid;
-      align-items: center;
+      padding: 75px 0;
+      background: #ffffff;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.4fr 0.6fr;
       gap: 40px;
-      align-items: center;
-    }
-
-    .label {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.78rem;
-      font-weight: 800;
-      margin-bottom: 18px;
+      align-items: start;
     }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
-      margin-bottom: 26px;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: 22px;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin-bottom: 18px;
+      font-size: 1.7rem;
+      margin-bottom: 25px;
+      color: var(--text);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
     }
 
     h3 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      color: var(--text);
     }
 
     p {
-      color: var(--muted);
+      margin-bottom: 12px;
     }
 
-    .hero-text {
-      font-size: 1.15rem;
-      max-width: 760px;
+    ul {
+      margin-left: 22px;
+      margin-top: 8px;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
+    li {
+      margin-bottom: 7px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid var(--line);
-      transition: 0.2s ease;
+    .info-box {
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 24px;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn.primary {
-      border: none;
-      color: #020617;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-    }
-
-    .btn.secondary {
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 38px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.055);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .profile-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 34px;
-      background:
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.24), transparent 35%),
-        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 32px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 24px;
-      background: linear-gradient(135deg, #111827, #020617);
-      border: 1px solid var(--line);
-      font-size: 2.1rem;
-      font-weight: 900;
-      letter-spacing: -0.08em;
-    }
-
-    .profile-card h2 {
-      font-size: 2rem;
+    .info-box p {
       margin-bottom: 8px;
     }
 
-    .tags {
+    .contact-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+    }
+
+    .btn-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 24px 0;
+      gap: 12px;
+      margin-top: 24px;
     }
 
-    .tags span {
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-weight: bold;
+      text-decoration: none;
+      background: #ffffff;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 25px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .date {
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .location {
       color: var(--muted);
-      font-size: 0.83rem;
+      margin-bottom: 8px;
     }
 
-    .profile-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .profile-links a {
-      text-align: center;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.06);
-      padding: 12px;
-      border-radius: 14px;
-      font-weight: 700;
-    }
-
-    .section-head {
-      max-width: 850px;
-      margin-bottom: 40px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .tools {
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 10px;
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 28px;
-      min-height: 240px;
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      background: var(--card-hover);
-    }
-
-    .dark-section {
-      background: rgba(255, 255, 255, 0.035);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .timeline {
-      display: grid;
       gap: 22px;
     }
 
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 28px;
-      align-items: start;
+    .card {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      padding: 22px;
     }
 
-    .date {
+    .card h3 {
       color: var(--accent);
-      font-weight: 900;
-      font-size: 0.95rem;
     }
 
-    .timeline-content {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.06);
-      border-radius: 22px;
-      padding: 24px;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 12px 25px;
     }
 
-    .tools {
-      margin-top: 10px;
-      color: #dbeafe;
-      font-weight: 800;
-      font-size: 0.92rem;
+    .skill-title {
+      font-weight: bold;
+      color: var(--text);
     }
 
-    ul {
-      padding-left: 20px;
+    .skill-content {
       color: var(--muted);
     }
 
-    li {
-      margin-bottom: 8px;
-    }
-
-    .skill-card {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.06);
-      border-radius: 22px;
-      padding: 24px;
-    }
-
-    .cert-list {
+    .certifications {
       columns: 2;
-      column-gap: 30px;
-    }
-
-    .contact-card {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 45px;
-      background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.14), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(139,92,246,0.14), transparent 35%),
-        rgba(255,255,255,0.065);
+      column-gap: 35px;
     }
 
     footer {
-      border-top: 1px solid var(--line);
       padding: 30px 0;
+      background: var(--light);
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
     }
 
     .footer-content {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 850px) {
       .hero-grid,
-      .grid-3,
       .grid-2,
-      .stats {
+      .timeline-item,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
@@ -421,39 +282,16 @@
         display: none;
       }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-links {
-        grid-template-columns: 1fr;
-      }
-
-      .cert-list {
-        columns: 1;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .container {
-        width: min(100% - 28px, var(--max));
-      }
-
       h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
       }
 
-      .contact-card {
-        padding: 28px;
+      .certifications {
+        columns: 1;
       }
 
       .footer-content {
         flex-direction: column;
-        align-items: flex-start;
       }
     }
   </style>
@@ -464,17 +302,14 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#top" class="logo">
-          <span class="logo-mark">MA</span>
-          Mohammed Amraoui
-        </a>
+        <a href="#top" class="logo">Mohammed Amraoui</a>
 
         <div class="nav-links">
           <a href="#formation">Formation</a>
           <a href="#experience">Expérience</a>
           <a href="#projects">Projets</a>
           <a href="#skills">Compétences</a>
-          <a href="#contact" class="nav-button">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
       </nav>
     </div>
@@ -486,214 +321,166 @@
       <div class="container">
         <div class="hero-grid">
 
-          <div class="reveal">
-            <p class="label">Doctorant en Informatique · INSA Centre Val de Loire</p>
-
+          <div>
             <h1>Mohammed Amraoui</h1>
+            <p class="subtitle">Doctorant en Informatique — INSA Centre Val de Loire</p>
 
-            <p class="hero-text">
-              Doctorant en informatique à INSA Centre Val de Loire, avec une formation en informatique quantique,
-              parallèle et distribuée, ingénierie informatique, data science, intelligence artificielle,
-              big data, cloud et programmation parallèle.
+            <p>
+              Je suis doctorant en informatique à INSA Centre Val de Loire, avec une formation en informatique quantique,
+              parallèle et distribuée, en ingénierie informatique et en sciences de la matière physique.
             </p>
 
-            <div class="actions">
-              <a href="#experience" class="btn primary">Voir mon parcours</a>
-              <a href="#contact" class="btn secondary">Me contacter</a>
-            </div>
+            <p>
+              Mes compétences couvrent la programmation, l’intelligence artificielle, la data science, le big data,
+              le cloud, le développement web et la programmation parallèle.
+            </p>
 
-            <div class="stats">
-              <div class="stat">
-                <strong>2024 — 2027</strong>
-                <span>Doctorant en Informatique</span>
-              </div>
-
-              <div class="stat">
-                <strong>Paris-Saclay</strong>
-                <span>M2 Informatique Quantique, Parallèle et Distribuée</span>
-              </div>
-
-              <div class="stat">
-                <strong>IA & Data</strong>
-                <span>Machine Learning, BigQuery, Cloud, Deep Learning</span>
-              </div>
+            <div class="btn-row">
+              <a href="#contact" class="btn primary">Me contacter</a>
+              <a href="#experience" class="btn">Voir mon parcours</a>
             </div>
           </div>
 
-          <aside class="profile-card reveal">
-            <div class="avatar">MA</div>
-
-            <h2>Mohammed Amraoui</h2>
-
-            <p>
-              Doctorant en Informatique<br>
-              INSA Centre Val de Loire<br>
-              Bourges, France
-            </p>
-
-            <div class="tags">
-              <span>Python</span>
-              <span>Java</span>
-              <span>C / C++</span>
-              <span>Machine Learning</span>
-              <span>Deep Learning</span>
-              <span>BigQuery</span>
-              <span>Google Cloud</span>
-              <span>CUDA</span>
-              <span>OpenMPI</span>
-            </div>
-
-            <div class="profile-links">
-              <a href="mailto:m2i.amraoui@gmail.com">Email</a>
-              <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank">GitHub</a>
-              <a href="https://www.linkedin.com/in/MOHAMMED-AMRAOUI" target="_blank">LinkedIn</a>
-              <a href="https://www.kaggle.com/mohammedamraoui77" target="_blank">Kaggle</a>
-            </div>
+          <aside class="info-box">
+            <h3>Coordonnées</h3>
+            <ul class="contact-list">
+              <li><strong>Email :</strong><br><a href="mailto:m2i.amraoui@gmail.com">m2i.amraoui@gmail.com</a></li>
+              <li><strong>Téléphone :</strong><br>+33 7 74 03 82 16</li>
+              <li><strong>Localisation :</strong><br>Bourges, France</li>
+              <li><strong>LinkedIn :</strong><br><a href="https://www.linkedin.com/in/MOHAMMED-AMRAOUI" target="_blank">MOHAMMED-AMRAOUI</a></li>
+              <li><strong>GitHub :</strong><br><a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank">MOHAMMED-AMRAOUI</a></li>
+              <li><strong>Kaggle :</strong><br><a href="https://www.kaggle.com/mohammedamraoui77" target="_blank">mohammedamraoui77</a></li>
+            </ul>
           </aside>
 
         </div>
       </div>
     </section>
 
-    <section id="formation" class="dark-section">
+    <section id="formation">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Formation</p>
-          <h2>Parcours académique</h2>
+        <h2>Formation</h2>
+
+        <div class="timeline-item">
+          <div class="date">2024 — 2027</div>
+          <div>
+            <h3>Doctorant en Informatique</h3>
+            <p class="location">INSA Centre Val de Loire — Bourges, France</p>
+          </div>
         </div>
 
-        <div class="timeline">
-
-          <div class="timeline-item reveal">
-            <div class="date">2024 — 2027</div>
-            <div class="timeline-content">
-              <h3>Doctorant en Informatique</h3>
-              <p>INSA Centre Val de Loire · Bourges, France</p>
-            </div>
+        <div class="timeline-item">
+          <div class="date">2023 — 2024</div>
+          <div>
+            <h3>M2 Informatique Quantique, Parallèle et Distribuée</h3>
+            <p class="location">Université Paris-Saclay — Paris, France</p>
           </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">2023 — 2024</div>
-            <div class="timeline-content">
-              <h3>M2 Informatique Quantique, Parallèle et Distribuée</h3>
-              <p>Université Paris-Saclay · Paris, France</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">2021 — 2023</div>
-            <div class="timeline-content">
-              <h3>Master Spécialisé en Ingénierie Informatique</h3>
-              <p>Faculté des Sciences d’Oujda · Oujda, Maroc</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">2018 — 2021</div>
-            <div class="timeline-content">
-              <h3>Licence fondamentale en Sciences de la matière physique</h3>
-              <p>Faculté des Sciences d’Oujda · Oujda, Maroc</p>
-            </div>
-          </div>
-
         </div>
+
+        <div class="timeline-item">
+          <div class="date">2021 — 2023</div>
+          <div>
+            <h3>Master Spécialisé en Ingénierie Informatique</h3>
+            <p class="location">Faculté des Sciences d’Oujda — Oujda, Maroc</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2018 — 2021</div>
+          <div>
+            <h3>Licence fondamentale en Sciences de la matière physique</h3>
+            <p class="location">Faculté des Sciences d’Oujda — Oujda, Maroc</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <section id="experience">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Expérience professionnelle</p>
-          <h2>Stages et expériences</h2>
+        <h2>Expérience professionnelle</h2>
+
+        <div class="timeline-item">
+          <div class="date">Mar 2024 — Août 2024</div>
+          <div>
+            <h3>Apprentissage profond géométrique pour le suivi des particules de haute énergie</h3>
+            <p class="location">PFE — Laboratoire des 2 Infinis, Toulouse, France</p>
+
+            <ul>
+              <li>Revue de la littérature sur les Réseaux Neuronaux Graphiques, GNN.</li>
+              <li>Implémentation, entraînement et évaluation de modèles avancés de GNN opérant dans un contexte multi-échelle et multi-topologique.</li>
+            </ul>
+
+            <p class="tools">Outils : Python, PyTorch, Sklearn, CUDA</p>
+          </div>
         </div>
 
-        <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">Févr 2023 — Juill 2023</div>
+          <div>
+            <h3>Analyse de Données en Santé et Modélisation de Machine Learning pour la Prédiction de Chutes</h3>
+            <p class="location">PFE — Entreprise AEVAweb, Oujda, Maroc</p>
 
-          <div class="timeline-item reveal">
-            <div class="date">Mar 2024 — Août 2024</div>
-            <div class="timeline-content">
-              <h3>Apprentissage profond géométrique pour le suivi des particules de haute énergie</h3>
-              <p>Laboratoire des 2 Infinis · Toulouse, France</p>
+            <ul>
+              <li>Conception de la base de données.</li>
+              <li>Script ETL automatisé : nettoyage, conversion des formats, fusion de plusieurs sources de données, anonymisation des données.</li>
+              <li>Utilisation de statistiques à l’aide de Looker Studio : séries temporelles, histogrammes, graphiques cartographiques, camemberts.</li>
+              <li>Analyse des données pour identifier les schémas et les anomalies.</li>
+              <li>Création d’un modèle de machine learning pour prédire la probabilité de chute basé sur l’âge, la pression artérielle, la saturation en oxygène, la fréquence cardiaque, la température et le niveau de glucose.</li>
+            </ul>
 
-              <ul>
-                <li>Revue de la littérature sur les Réseaux Neuronaux Graphiques, GNN.</li>
-                <li>Implémentation, entraînement et évaluation de modèles avancés de GNN opérant dans un contexte multi-échelle et multi-topologique.</li>
-              </ul>
-
-              <p class="tools">Outils : Python, PyTorch, Sklearn, CUDA</p>
-            </div>
+            <p class="tools">Outils : Python, Google Data Studio, BigQuery, BigQuery ML</p>
           </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">Févr 2023 — Juill 2023</div>
-            <div class="timeline-content">
-              <h3>Analyse de Données en Santé et Modélisation de Machine Learning pour la Prédiction de Chutes</h3>
-              <p>Entreprise AEVAweb · Oujda, Maroc</p>
-
-              <ul>
-                <li>Conception de la base de données.</li>
-                <li>Script ETL automatisé : nettoyage, conversion des formats, fusion de plusieurs sources de données, anonymisation des données.</li>
-                <li>Utilisation de statistiques à l’aide de Looker Studio : séries temporelles, histogrammes, graphiques cartographiques, camemberts.</li>
-                <li>Analyse des données pour identifier les schémas et les anomalies.</li>
-                <li>Création d’un modèle de machine learning pour prédire la probabilité de chute basé sur l’âge, la pression artérielle, la saturation en oxygène, la fréquence cardiaque, la température et le niveau de glucose.</li>
-              </ul>
-
-              <p class="tools">Outils : Python, Google Data Studio, BigQuery, BigQuery ML</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">PFE</div>
-            <div class="timeline-content">
-              <h3>Développement d’une application Android pour la génération de musique avec l’IA générative</h3>
-
-              <ul>
-                <li>État de l’art de l’IA générative pour la musique : MusicLM, Mubert, Riffusion, MusicGen.</li>
-                <li>Comparaison de toutes les solutions de génération de musique et choix de la plus performante.</li>
-                <li>Création d’une API pour le modèle MusicGen avec Flask.</li>
-                <li>Développement d’une application Android qui se connecte à cette API.</li>
-              </ul>
-
-              <p class="tools">Outils : Python, Android, Flask API, PyTorch</p>
-            </div>
-          </div>
-
         </div>
+
+        <div class="timeline-item">
+          <div class="date">PFE</div>
+          <div>
+            <h3>Développement d’une application Android pour la génération de musique avec l’IA générative</h3>
+
+            <ul>
+              <li>État de l’art de l’IA générative pour la musique : MusicLM, Mubert, Riffusion, MusicGen.</li>
+              <li>Comparaison de toutes les solutions de génération de musique et choix de la plus performante.</li>
+              <li>Création d’une API pour le modèle MusicGen avec Flask.</li>
+              <li>Développement d’une application Android qui se connecte à cette API.</li>
+            </ul>
+
+            <p class="tools">Outils : Python, Android, Flask API, PyTorch</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section id="projects" class="dark-section">
+    <section id="projects">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Projets académiques</p>
-          <h2>Projets réalisés</h2>
-        </div>
+        <h2>Projets académiques</h2>
 
         <div class="grid-2">
 
-          <article class="card reveal">
+          <article class="card">
             <h3>Classification des textes arabes basée sur les réseaux de neurones</h3>
             <p><strong>2023</strong></p>
             <ul>
-              <li>Normalisation des données : élimination de la diacritique, des mots non arabes, de la ponctuation, des chiffres numériques, des mots vides et des espaces supplémentaires.</li>
+              <li>Normalisation des données : élimination de la diacritique, mots non arabes, ponctuation, chiffres, mots vides et espaces supplémentaires.</li>
               <li>Création d’un jeu de données comprenant nombre de phrases, mots, racines, lemmes et caractères.</li>
               <li>Création du modèle de Deep Learning avec TensorFlow.</li>
             </ul>
             <p class="tools">Outils : Python, TensorFlow, Keras, Sklearn</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
             <h3>Algorithme des k plus proches voisins</h3>
             <p><strong>2022</strong></p>
             <ul>
-              <li>Classification d’un joueur pouvant jouer ou non, basée sur les caractéristiques météorologiques qui sont des chaînes de caractères.</li>
+              <li>Classification d’un joueur pouvant jouer ou non selon des caractéristiques météorologiques.</li>
               <li>Extraction et normalisation des données du jeu de données weather.nominal.arff.</li>
               <li>Implémentation de l’algorithme kNN en Java.</li>
             </ul>
             <p class="tools">Outils : Java, Java Swing</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
             <h3>Prédiction des prix des maisons</h3>
             <p><strong>2022</strong></p>
             <ul>
@@ -704,11 +491,11 @@
             <p class="tools">Outils : Python, Pandas, NumPy, Sklearn, Flask, HTML, CSS</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
             <h3>Moteur de recherche multilingue</h3>
             <p><strong>2022</strong></p>
             <ul>
-              <li>Moteur de recherche permettant de rechercher dans un corpus contenant des textes en plusieurs langues : arabe, anglais, chinois...</li>
+              <li>Recherche dans un corpus contenant des textes en plusieurs langues : arabe, anglais, chinois...</li>
               <li>Configuration et indexation des données multilingues.</li>
               <li>Création d’une interface en Java.</li>
             </ul>
@@ -721,114 +508,85 @@
 
     <section id="skills">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Compétences</p>
-          <h2>Compétences techniques</h2>
-        </div>
+        <h2>Compétences</h2>
 
-        <div class="grid-2">
+        <div class="skills-grid">
+          <div class="skill-title">Logiciels</div>
+          <div class="skill-content">Microsoft Office : Word, Excel, PowerPoint</div>
 
-          <div class="skill-card reveal">
-            <h3>Logiciels</h3>
-            <p>Microsoft Office : Word, Excel, PowerPoint</p>
-          </div>
+          <div class="skill-title">Langages de programmation</div>
+          <div class="skill-content">C, C++, Java, Python</div>
 
-          <div class="skill-card reveal">
-            <h3>Langages de programmation</h3>
-            <p>C, C++, Java, Python</p>
-          </div>
+          <div class="skill-title">Base de données</div>
+          <div class="skill-content">SQL</div>
 
-          <div class="skill-card reveal">
-            <h3>Base de données et Big Data</h3>
-            <p>SQL, BigQuery</p>
-          </div>
+          <div class="skill-title">Big Data</div>
+          <div class="skill-content">BigQuery</div>
 
-          <div class="skill-card reveal">
-            <h3>Business Intelligence</h3>
-            <p>Google Data Studio</p>
-          </div>
+          <div class="skill-title">Business Intelligence</div>
+          <div class="skill-content">Google Data Studio</div>
 
-          <div class="skill-card reveal">
-            <h3>Développement web</h3>
-            <p>HTML, CSS, JavaScript</p>
-          </div>
+          <div class="skill-title">Développement web</div>
+          <div class="skill-content">HTML, CSS, JavaScript</div>
 
-          <div class="skill-card reveal">
-            <h3>Intelligence artificielle et Data Science</h3>
-            <p>
-              Supervised Learning, Unsupervised Learning, Deep Learning, TensorFlow,
-              PyTorch, PyTorch Geometric, Scikit-Learn, Natural Language Processing,
-              Pandas, NumPy, Matplotlib, SciPy, Seaborn, BigQuery ML
-            </p>
-          </div>
+          <div class="skill-title">Intelligence artificielle</div>
+          <div class="skill-content">Supervised Learning, Unsupervised Learning, Deep Learning</div>
 
-          <div class="skill-card reveal">
-            <h3>Cloud et version control</h3>
-            <p>Google Cloud, GitLab</p>
-          </div>
+          <div class="skill-title">Data Science</div>
+          <div class="skill-content">TensorFlow, PyTorch, PyTorch Geometric, Scikit-Learn, NLP, Pandas, NumPy, Matplotlib, SciPy, Seaborn, BigQuery ML</div>
 
-          <div class="skill-card reveal">
-            <h3>Programmation parallèle</h3>
-            <p>OpenMP, AVX2, BLAS & LAPACK, CUDA, OpenMPI</p>
-          </div>
+          <div class="skill-title">Cloud</div>
+          <div class="skill-content">Google Cloud</div>
 
-          <div class="skill-card reveal">
-            <h3>Langues</h3>
-            <p>Français C1, Anglais C1, Arabe C2</p>
-          </div>
+          <div class="skill-title">Version control</div>
+          <div class="skill-content">GitLab</div>
 
-          <div class="skill-card reveal">
-            <h3>Vie associative</h3>
-            <p>Membre du club Quark — Physique</p>
-          </div>
+          <div class="skill-title">Programmation parallèle</div>
+          <div class="skill-content">OpenMP, AVX2, BLAS & LAPACK, CUDA, OpenMPI</div>
 
+          <div class="skill-title">Langues</div>
+          <div class="skill-content">Français C1, Anglais C1, Arabe C2</div>
         </div>
       </div>
     </section>
 
-    <section class="dark-section">
+    <section id="certifications">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Certifications</p>
-          <h2>Certifications</h2>
-        </div>
+        <h2>Certifications</h2>
 
-        <div class="skill-card reveal">
-          <ul class="cert-list">
-            <li>IBM Python for Data Science</li>
-            <li>IBM Data Science Tools</li>
-            <li>CISCO CCNA Introduction to Networks</li>
-            <li>CertiProf Scrum Foundation Professional Certificate</li>
-            <li>SOLOLEARN and HACKERRANK Python</li>
-            <li>SOLOLEARN and HACKERRANK Java</li>
-            <li>HACKERRANK SQL</li>
-            <li>Coursera Supervised Machine Learning: Regression and Classification</li>
-            <li>Coursera Data Analysis with Python</li>
-            <li>Coursera Analyzing and Visualizing Data in Looker</li>
-          </ul>
-        </div>
+        <ul class="certifications">
+          <li>IBM Python for Data Science</li>
+          <li>IBM Data Science Tools</li>
+          <li>CISCO CCNA Introduction to Networks</li>
+          <li>CertiProf Scrum Foundation Professional Certificate</li>
+          <li>SOLOLEARN and HACKERRANK Python</li>
+          <li>SOLOLEARN and HACKERRANK Java</li>
+          <li>HACKERRANK SQL</li>
+          <li>Coursera Supervised Machine Learning: Regression and Classification</li>
+          <li>Coursera Data Analysis with Python</li>
+          <li>Coursera Analyzing and Visualizing Data in Looker</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="association">
+      <div class="container">
+        <h2>Vie associative</h2>
+        <p><strong>Membre du club Quark</strong></p>
+        <p>Physique</p>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="contact-card reveal">
-          <p class="label">Contact</p>
-          <h2>Me contacter</h2>
+        <h2>Contact</h2>
 
-          <p>
-            Email : m2i.amraoui@gmail.com<br>
-            Téléphone : +33 7 74 03 82 16<br>
-            Localisation : Bourges, France
-          </p>
-
-          <div class="actions" style="justify-content:center;">
-            <a href="mailto:m2i.amraoui@gmail.com" class="btn primary">Envoyer un email</a>
-            <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank" class="btn secondary">GitHub</a>
-            <a href="https://www.linkedin.com/in/MOHAMMED-AMRAOUI" target="_blank" class="btn secondary">LinkedIn</a>
-            <a href="https://www.kaggle.com/mohammedamraoui77" target="_blank" class="btn secondary">Kaggle</a>
-          </div>
-        </div>
+        <p><strong>Email :</strong> <a href="mailto:m2i.amraoui@gmail.com">m2i.amraoui@gmail.com</a></p>
+        <p><strong>Téléphone :</strong> +33 7 74 03 82 16</p>
+        <p><strong>Localisation :</strong> Bourges, France</p>
+        <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/MOHAMMED-AMRAOUI" target="_blank">MOHAMMED-AMRAOUI</a></p>
+        <p><strong>GitHub :</strong> <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank">MOHAMMED-AMRAOUI</a></p>
+        <p><strong>Kaggle :</strong> <a href="https://www.kaggle.com/mohammedamraoui77" target="_blank">mohammedamraoui77</a></p>
       </div>
     </section>
 
@@ -836,28 +594,13 @@
 
   <footer>
     <div class="container footer-content">
-      <p>© <span id="year"></span> Mohammed Amraoui. Portfolio basé sur le CV.</p>
+      <p>© <span id="year"></span> Mohammed Amraoui. Portfolio personnel.</p>
       <a href="#top">Retour en haut ↑</a>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    const elements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12
-    });
-
-    elements.forEach(element => observer.observe(element));
   </script>
 
 </body>
