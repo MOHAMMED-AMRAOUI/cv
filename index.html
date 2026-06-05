@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mohammed Amraoui | PhD Researcher in Computer Science</title>
+  <title>Mohammed Amraoui | Doctorant en Informatique</title>
 
-  <meta name="description" content="Mohammed Amraoui — PhD Researcher in Computer Science at INSA Centre Val de Loire. Research in AI, Data Provenance, Healthcare Data, Machine Learning and Distributed Systems." />
+  <meta name="description" content="Portfolio de Mohammed Amraoui, doctorant en informatique à INSA Centre Val de Loire. Compétences en intelligence artificielle, data science, big data, cloud, développement web et programmation parallèle." />
 
   <style>
     :root {
       --bg: #050816;
-      --bg2: #0b1020;
+      --bg-soft: #0b1020;
       --card: rgba(255, 255, 255, 0.075);
-      --card2: rgba(255, 255, 255, 0.11);
-      --text: #f4f7fb;
+      --card-hover: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
       --muted: #aab4c8;
-      --line: rgba(255,255,255,0.14);
-      --blue: #38bdf8;
-      --violet: #8b5cf6;
-      --green: #22c55e;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #38bdf8;
+      --accent2: #8b5cf6;
       --radius: 24px;
       --max: 1150px;
     }
@@ -35,12 +34,11 @@
     }
 
     body {
-      font-family: Inter, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 35%),
-        radial-gradient(circle at top right, rgba(139,92,246,0.22), transparent 35%),
-        radial-gradient(circle at bottom, rgba(34,197,94,0.08), transparent 40%),
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.20), transparent 35%),
         var(--bg);
       line-height: 1.7;
     }
@@ -58,8 +56,8 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 99;
-      background: rgba(5,8,22,0.75);
+      z-index: 100;
+      background: rgba(5, 8, 22, 0.78);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
     }
@@ -79,13 +77,13 @@
       letter-spacing: -0.03em;
     }
 
-    .logo span {
+    .logo-mark {
       width: 42px;
       height: 42px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--blue), var(--violet));
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #020617;
       font-weight: 900;
     }
@@ -103,15 +101,15 @@
     }
 
     .nav-button {
-      color: var(--text);
-      border: 1px solid var(--line);
       padding: 9px 16px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
     }
 
     section {
-      padding: 90px 0;
+      padding: 85px 0;
     }
 
     .hero {
@@ -123,12 +121,12 @@
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 38px;
+      gap: 40px;
       align-items: center;
     }
 
     .label {
-      color: var(--blue);
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.18em;
       font-size: 0.78rem;
@@ -144,7 +142,7 @@
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-size: clamp(2rem, 4vw, 3.3rem);
       line-height: 1.05;
       letter-spacing: -0.055em;
       margin-bottom: 18px;
@@ -188,13 +186,13 @@
     }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--blue), var(--violet));
-      color: #020617;
       border: none;
+      color: #020617;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
     }
 
     .btn.secondary {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--text);
     }
 
@@ -206,16 +204,16 @@
     }
 
     .stat {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.055);
-      border-radius: 18px;
       padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.055);
     }
 
     .stat strong {
       display: block;
-      font-size: 1rem;
       color: var(--text);
+      font-size: 1rem;
     }
 
     .stat span {
@@ -224,15 +222,13 @@
     }
 
     .profile-card {
-      position: relative;
-      overflow: hidden;
       border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(56,189,248,0.25), transparent 35%),
-        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
       border-radius: var(--radius);
       padding: 34px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.42);
+      background:
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.24), transparent 35%),
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
     }
 
     .avatar {
@@ -285,16 +281,8 @@
       font-weight: 700;
     }
 
-    .intro-box {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-      background: linear-gradient(90deg, rgba(56,189,248,0.12), rgba(139,92,246,0.12));
-      font-size: 1.1rem;
-    }
-
     .section-head {
-      max-width: 820px;
+      max-width: 850px;
       margin-bottom: 40px;
     }
 
@@ -315,30 +303,22 @@
       background: var(--card);
       border-radius: var(--radius);
       padding: 28px;
-      min-height: 250px;
+      min-height: 240px;
       transition: 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: var(--card2);
-    }
-
-    .card-number {
-      display: inline-block;
-      color: var(--blue);
-      font-weight: 900;
-      margin-bottom: 38px;
+      background: var(--card-hover);
     }
 
     .dark-section {
-      background: rgba(255,255,255,0.035);
+      background: rgba(255, 255, 255, 0.035);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
     .timeline {
-      position: relative;
       display: grid;
       gap: 22px;
     }
@@ -351,7 +331,7 @@
     }
 
     .date {
-      color: var(--blue);
+      color: var(--accent);
       font-weight: 900;
       font-size: 0.95rem;
     }
@@ -365,9 +345,18 @@
 
     .tools {
       margin-top: 10px;
-      font-weight: 800;
       color: #dbeafe;
+      font-weight: 800;
       font-size: 0.92rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     .skill-card {
@@ -377,13 +366,9 @@
       padding: 24px;
     }
 
-    .quote {
-      border-left: 4px solid var(--blue);
-      padding-left: 28px;
-      font-size: clamp(1.7rem, 4vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: var(--text);
+    .cert-list {
+      columns: 2;
+      column-gap: 30px;
     }
 
     .contact-card {
@@ -444,6 +429,10 @@
         grid-template-columns: 1fr;
       }
 
+      .cert-list {
+        columns: 1;
+      }
+
       section {
         padding: 70px 0;
       }
@@ -476,15 +465,15 @@
     <div class="container">
       <nav>
         <a href="#top" class="logo">
-          <span>MA</span>
+          <span class="logo-mark">MA</span>
           Mohammed Amraoui
         </a>
 
         <div class="nav-links">
-          <a href="#research">Research</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
+          <a href="#formation">Formation</a>
+          <a href="#experience">Expérience</a>
+          <a href="#projects">Projets</a>
+          <a href="#skills">Compétences</a>
           <a href="#contact" class="nav-button">Contact</a>
         </div>
       </nav>
@@ -498,35 +487,35 @@
         <div class="hero-grid">
 
           <div class="reveal">
-            <p class="label">PhD Researcher · AI · Data Provenance · Healthcare Data</p>
+            <p class="label">Doctorant en Informatique · INSA Centre Val de Loire</p>
 
-            <h1>Building trustworthy AI systems through data provenance and intelligent engineering.</h1>
+            <h1>Mohammed Amraoui</h1>
 
             <p class="hero-text">
-              I am Mohammed Amraoui, a PhD researcher in Computer Science at INSA Centre Val de Loire.
-              My work focuses on data provenance, machine learning workflows, healthcare data, distributed systems,
-              and reliable AI engineering.
+              Doctorant en informatique à INSA Centre Val de Loire, avec une formation en informatique quantique,
+              parallèle et distribuée, ingénierie informatique, data science, intelligence artificielle,
+              big data, cloud et programmation parallèle.
             </p>
 
             <div class="actions">
-              <a href="#research" class="btn primary">Explore my research</a>
-              <a href="#contact" class="btn secondary">Contact me</a>
+              <a href="#experience" class="btn primary">Voir mon parcours</a>
+              <a href="#contact" class="btn secondary">Me contacter</a>
             </div>
 
             <div class="stats">
               <div class="stat">
                 <strong>2024 — 2027</strong>
-                <span>PhD in Computer Science</span>
+                <span>Doctorant en Informatique</span>
               </div>
 
               <div class="stat">
-                <strong>Healthcare AI</strong>
-                <span>Data provenance and ML</span>
+                <strong>Paris-Saclay</strong>
+                <span>M2 Informatique Quantique, Parallèle et Distribuée</span>
               </div>
 
               <div class="stat">
-                <strong>France · Morocco</strong>
-                <span>International academic profile</span>
+                <strong>IA & Data</strong>
+                <span>Machine Learning, BigQuery, Cloud, Deep Learning</span>
               </div>
             </div>
           </div>
@@ -543,12 +532,15 @@
             </p>
 
             <div class="tags">
-              <span>Artificial Intelligence</span>
-              <span>Data Provenance</span>
+              <span>Python</span>
+              <span>Java</span>
+              <span>C / C++</span>
               <span>Machine Learning</span>
-              <span>Healthcare Data</span>
-              <span>Distributed Systems</span>
-              <span>Quantum & HPC</span>
+              <span>Deep Learning</span>
+              <span>BigQuery</span>
+              <span>Google Cloud</span>
+              <span>CUDA</span>
+              <span>OpenMPI</span>
             </div>
 
             <div class="profile-links">
@@ -563,62 +555,11 @@
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="intro-box reveal">
-          My profile combines research, software engineering, data science and high-performance computing.
-          I aim to design systems that are not only accurate, but also traceable, reproducible, explainable and trustworthy.
-        </div>
-      </div>
-    </section>
-
-    <section id="research">
+    <section id="formation" class="dark-section">
       <div class="container">
         <div class="section-head reveal">
-          <p class="label">Research Identity</p>
-          <h2>Research at the intersection of AI, provenance, healthcare and distributed systems.</h2>
-          <p>
-            My academic direction is centered on understanding how data is created, transformed,
-            used and validated inside intelligent systems.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal">
-            <span class="card-number">01</span>
-            <h3>Data Provenance for Healthcare</h3>
-            <p>
-              Modeling the origin, history and transformation of medical data to improve traceability,
-              reliability, integrity and accountability in healthcare information systems.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <span class="card-number">02</span>
-            <h3>Machine Learning Lifecycle</h3>
-            <p>
-              Capturing provenance across ML pipelines: data loading, preprocessing, feature engineering,
-              training, cross-validation, evaluation metrics and deployment.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <span class="card-number">03</span>
-            <h3>Distributed and High-Performance Computing</h3>
-            <p>
-              Academic background in quantum, parallel and distributed computing with experience in CUDA,
-              OpenMP, OpenMPI, AVX2, BLAS and LAPACK.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="dark-section">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Experience</p>
-          <h2>Academic and professional journey.</h2>
+          <p class="label">Formation</p>
+          <h2>Parcours académique</h2>
         </div>
 
         <div class="timeline">
@@ -626,45 +567,15 @@
           <div class="timeline-item reveal">
             <div class="date">2024 — 2027</div>
             <div class="timeline-content">
-              <h3>PhD Researcher in Computer Science</h3>
+              <h3>Doctorant en Informatique</h3>
               <p>INSA Centre Val de Loire · Bourges, France</p>
-              <p>
-                Research focused on provenance management, machine learning pipelines,
-                healthcare data, integrity, reliability and trustworthy AI systems.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">Mar 2024 — Aug 2024</div>
-            <div class="timeline-content">
-              <h3>Deep Geometric Learning for High-Energy Particle Tracking</h3>
-              <p>Laboratoire des 2 Infinis · Toulouse, France</p>
-              <p>
-                Literature review on Graph Neural Networks and implementation, training and evaluation
-                of advanced GNN models in multi-scale and multi-topological contexts.
-              </p>
-              <p class="tools">Python · PyTorch · Scikit-learn · CUDA</p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal">
-            <div class="date">Feb 2023 — Jul 2023</div>
-            <div class="timeline-content">
-              <h3>Healthcare Data Analysis and Machine Learning for Fall Prediction</h3>
-              <p>AEVAweb · Oujda, Morocco</p>
-              <p>
-                Designed databases, built automated ETL scripts, anonymized data, created Looker Studio dashboards,
-                analyzed health data and developed ML models for fall-risk prediction.
-              </p>
-              <p class="tools">Python · BigQuery · BigQuery ML · Looker Studio</p>
             </div>
           </div>
 
           <div class="timeline-item reveal">
             <div class="date">2023 — 2024</div>
             <div class="timeline-content">
-              <h3>M2 Quantum, Parallel and Distributed Computer Science</h3>
+              <h3>M2 Informatique Quantique, Parallèle et Distribuée</h3>
               <p>Université Paris-Saclay · Paris, France</p>
             </div>
           </div>
@@ -672,16 +583,16 @@
           <div class="timeline-item reveal">
             <div class="date">2021 — 2023</div>
             <div class="timeline-content">
-              <h3>Specialized Master in Computer Engineering</h3>
-              <p>Faculté des Sciences d’Oujda · Morocco</p>
+              <h3>Master Spécialisé en Ingénierie Informatique</h3>
+              <p>Faculté des Sciences d’Oujda · Oujda, Maroc</p>
             </div>
           </div>
 
           <div class="timeline-item reveal">
             <div class="date">2018 — 2021</div>
             <div class="timeline-content">
-              <h3>Bachelor in Physical Sciences</h3>
-              <p>Faculté des Sciences d’Oujda · Morocco</p>
+              <h3>Licence fondamentale en Sciences de la matière physique</h3>
+              <p>Faculté des Sciences d’Oujda · Oujda, Maroc</p>
             </div>
           </div>
 
@@ -689,116 +600,213 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <p class="label">Selected Projects</p>
-          <h2>Projects combining research, engineering and applied AI.</h2>
+          <p class="label">Expérience professionnelle</p>
+          <h2>Stages et expériences</h2>
         </div>
 
-        <div class="grid-2">
+        <div class="timeline">
 
-          <article class="card reveal">
-            <h3>Provenance-Aware Machine Learning Pipelines</h3>
-            <p>
-              Instrumentation of ML workflows to capture dataflow, transformations, model configurations,
-              metrics, evaluation results and reproducibility evidence.
-            </p>
-          </article>
+          <div class="timeline-item reveal">
+            <div class="date">Mar 2024 — Août 2024</div>
+            <div class="timeline-content">
+              <h3>Apprentissage profond géométrique pour le suivi des particules de haute énergie</h3>
+              <p>Laboratoire des 2 Infinis · Toulouse, France</p>
 
-          <article class="card reveal">
-            <h3>Healthcare Fall-Risk Prediction System</h3>
-            <p>
-              Data analysis and machine learning project for predicting fall probability using health indicators
-              such as blood pressure, oxygen saturation, heart rate, temperature and glucose level.
-            </p>
-          </article>
+              <ul>
+                <li>Revue de la littérature sur les Réseaux Neuronaux Graphiques, GNN.</li>
+                <li>Implémentation, entraînement et évaluation de modèles avancés de GNN opérant dans un contexte multi-échelle et multi-topologique.</li>
+              </ul>
 
-          <article class="card reveal">
-            <h3>Arabic Text Classification with Neural Networks</h3>
-            <p>
-              Arabic NLP system including text normalization, dataset creation, feature preparation
-              and deep learning model training with TensorFlow and Keras.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Generative AI Music Application</h3>
-            <p>
-              Android application connected to a Flask API for MusicGen, after a comparative study
-              of MusicLM, Mubert, Riffusion and MusicGen.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Multilingual Search Engine</h3>
-            <p>
-              Search engine for multilingual corpora containing Arabic, English, Chinese and other languages,
-              using Java, React, Bootstrap, Apache Solr and Apache Tika.
-            </p>
-          </article>
-
-          <article class="card reveal">
-            <h3>House Price Prediction Model</h3>
-            <p>
-              Machine learning project including data analysis, preprocessing, modeling, evaluation
-              and deployment using Python, Flask, HTML and CSS.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="dark-section">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="label">Technical Skills</p>
-          <h2>A technical profile between AI research, data engineering and software development.</h2>
-        </div>
-
-        <div class="grid-2">
-
-          <div class="skill-card reveal">
-            <h3>Programming</h3>
-            <p>Python · Java · C · C++ · HTML · CSS · JavaScript</p>
+              <p class="tools">Outils : Python, PyTorch, Sklearn, CUDA</p>
+            </div>
           </div>
 
-          <div class="skill-card reveal">
-            <h3>Artificial Intelligence</h3>
-            <p>Supervised Learning · Unsupervised Learning · Deep Learning · NLP · TensorFlow · PyTorch · PyTorch Geometric · Scikit-learn</p>
+          <div class="timeline-item reveal">
+            <div class="date">Févr 2023 — Juill 2023</div>
+            <div class="timeline-content">
+              <h3>Analyse de Données en Santé et Modélisation de Machine Learning pour la Prédiction de Chutes</h3>
+              <p>Entreprise AEVAweb · Oujda, Maroc</p>
+
+              <ul>
+                <li>Conception de la base de données.</li>
+                <li>Script ETL automatisé : nettoyage, conversion des formats, fusion de plusieurs sources de données, anonymisation des données.</li>
+                <li>Utilisation de statistiques à l’aide de Looker Studio : séries temporelles, histogrammes, graphiques cartographiques, camemberts.</li>
+                <li>Analyse des données pour identifier les schémas et les anomalies.</li>
+                <li>Création d’un modèle de machine learning pour prédire la probabilité de chute basé sur l’âge, la pression artérielle, la saturation en oxygène, la fréquence cardiaque, la température et le niveau de glucose.</li>
+              </ul>
+
+              <p class="tools">Outils : Python, Google Data Studio, BigQuery, BigQuery ML</p>
+            </div>
           </div>
 
-          <div class="skill-card reveal">
-            <h3>Data and Cloud</h3>
-            <p>SQL · BigQuery · BigQuery ML · Google Cloud · Looker Studio · Pandas · NumPy · Matplotlib · SciPy</p>
-          </div>
+          <div class="timeline-item reveal">
+            <div class="date">PFE</div>
+            <div class="timeline-content">
+              <h3>Développement d’une application Android pour la génération de musique avec l’IA générative</h3>
 
-          <div class="skill-card reveal">
-            <h3>High-Performance Computing</h3>
-            <p>OpenMP · OpenMPI · CUDA · AVX2 · BLAS · LAPACK</p>
-          </div>
+              <ul>
+                <li>État de l’art de l’IA générative pour la musique : MusicLM, Mubert, Riffusion, MusicGen.</li>
+                <li>Comparaison de toutes les solutions de génération de musique et choix de la plus performante.</li>
+                <li>Création d’une API pour le modèle MusicGen avec Flask.</li>
+                <li>Développement d’une application Android qui se connecte à cette API.</li>
+              </ul>
 
-          <div class="skill-card reveal">
-            <h3>Software and Tools</h3>
-            <p>GitLab · Microsoft Office · Flask · Android · Apache Solr · Apache Tika</p>
-          </div>
-
-          <div class="skill-card reveal">
-            <h3>Languages</h3>
-            <p>Arabic C2 · French C1 · English C1</p>
+              <p class="tools">Outils : Python, Android, Flask API, PyTorch</p>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="projects" class="dark-section">
       <div class="container">
-        <p class="quote reveal">
-          “My objective is to design intelligent systems that are not only accurate,
-          but also traceable, reproducible and trustworthy.”
-        </p>
+        <div class="section-head reveal">
+          <p class="label">Projets académiques</p>
+          <h2>Projets réalisés</h2>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card reveal">
+            <h3>Classification des textes arabes basée sur les réseaux de neurones</h3>
+            <p><strong>2023</strong></p>
+            <ul>
+              <li>Normalisation des données : élimination de la diacritique, des mots non arabes, de la ponctuation, des chiffres numériques, des mots vides et des espaces supplémentaires.</li>
+              <li>Création d’un jeu de données comprenant nombre de phrases, mots, racines, lemmes et caractères.</li>
+              <li>Création du modèle de Deep Learning avec TensorFlow.</li>
+            </ul>
+            <p class="tools">Outils : Python, TensorFlow, Keras, Sklearn</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Algorithme des k plus proches voisins</h3>
+            <p><strong>2022</strong></p>
+            <ul>
+              <li>Classification d’un joueur pouvant jouer ou non, basée sur les caractéristiques météorologiques qui sont des chaînes de caractères.</li>
+              <li>Extraction et normalisation des données du jeu de données weather.nominal.arff.</li>
+              <li>Implémentation de l’algorithme kNN en Java.</li>
+            </ul>
+            <p class="tools">Outils : Java, Java Swing</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Prédiction des prix des maisons</h3>
+            <p><strong>2022</strong></p>
+            <ul>
+              <li>Analyse et prétraitement des données.</li>
+              <li>Modélisation et entraînement.</li>
+              <li>Évaluation et déploiement.</li>
+            </ul>
+            <p class="tools">Outils : Python, Pandas, NumPy, Sklearn, Flask, HTML, CSS</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Moteur de recherche multilingue</h3>
+            <p><strong>2022</strong></p>
+            <ul>
+              <li>Moteur de recherche permettant de rechercher dans un corpus contenant des textes en plusieurs langues : arabe, anglais, chinois...</li>
+              <li>Configuration et indexation des données multilingues.</li>
+              <li>Création d’une interface en Java.</li>
+            </ul>
+            <p class="tools">Outils : Java, ReactJS, Bootstrap 5, Apache Solr, Apache Tika</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Compétences</p>
+          <h2>Compétences techniques</h2>
+        </div>
+
+        <div class="grid-2">
+
+          <div class="skill-card reveal">
+            <h3>Logiciels</h3>
+            <p>Microsoft Office : Word, Excel, PowerPoint</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Langages de programmation</h3>
+            <p>C, C++, Java, Python</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Base de données et Big Data</h3>
+            <p>SQL, BigQuery</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Business Intelligence</h3>
+            <p>Google Data Studio</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Développement web</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Intelligence artificielle et Data Science</h3>
+            <p>
+              Supervised Learning, Unsupervised Learning, Deep Learning, TensorFlow,
+              PyTorch, PyTorch Geometric, Scikit-Learn, Natural Language Processing,
+              Pandas, NumPy, Matplotlib, SciPy, Seaborn, BigQuery ML
+            </p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Cloud et version control</h3>
+            <p>Google Cloud, GitLab</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Programmation parallèle</h3>
+            <p>OpenMP, AVX2, BLAS & LAPACK, CUDA, OpenMPI</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Langues</h3>
+            <p>Français C1, Anglais C1, Arabe C2</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3>Vie associative</h3>
+            <p>Membre du club Quark — Physique</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Certifications</p>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="skill-card reveal">
+          <ul class="cert-list">
+            <li>IBM Python for Data Science</li>
+            <li>IBM Data Science Tools</li>
+            <li>CISCO CCNA Introduction to Networks</li>
+            <li>CertiProf Scrum Foundation Professional Certificate</li>
+            <li>SOLOLEARN and HACKERRANK Python</li>
+            <li>SOLOLEARN and HACKERRANK Java</li>
+            <li>HACKERRANK SQL</li>
+            <li>Coursera Supervised Machine Learning: Regression and Classification</li>
+            <li>Coursera Data Analysis with Python</li>
+            <li>Coursera Analyzing and Visualizing Data in Looker</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -806,16 +814,19 @@
       <div class="container">
         <div class="contact-card reveal">
           <p class="label">Contact</p>
-          <h2>Let’s discuss research, collaboration or engineering opportunities.</h2>
+          <h2>Me contacter</h2>
+
           <p>
-            Open to academic collaborations, AI projects, data provenance research,
-            healthcare data systems and trustworthy machine learning engineering.
+            Email : m2i.amraoui@gmail.com<br>
+            Téléphone : +33 7 74 03 82 16<br>
+            Localisation : Bourges, France
           </p>
 
           <div class="actions" style="justify-content:center;">
-            <a href="mailto:m2i.amraoui@gmail.com" class="btn primary">Email me</a>
+            <a href="mailto:m2i.amraoui@gmail.com" class="btn primary">Envoyer un email</a>
             <a href="https://github.com/MOHAMMED-AMRAOUI" target="_blank" class="btn secondary">GitHub</a>
             <a href="https://www.linkedin.com/in/MOHAMMED-AMRAOUI" target="_blank" class="btn secondary">LinkedIn</a>
+            <a href="https://www.kaggle.com/mohammedamraoui77" target="_blank" class="btn secondary">Kaggle</a>
           </div>
         </div>
       </div>
@@ -825,8 +836,8 @@
 
   <footer>
     <div class="container footer-content">
-      <p>© <span id="year"></span> Mohammed Amraoui. Research portfolio.</p>
-      <a href="#top">Back to top ↑</a>
+      <p>© <span id="year"></span> Mohammed Amraoui. Portfolio basé sur le CV.</p>
+      <a href="#top">Retour en haut ↑</a>
     </div>
   </footer>
 
